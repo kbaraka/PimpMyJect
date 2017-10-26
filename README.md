@@ -28,4 +28,4 @@ Id |							User Story																						| Priority	 |  Cost
 26 | En tant que membre de l’équipe, je souhaite gérer les tests afin de supprimer un test.										|   16		 |	 2
 27 | En tant que membre de l’équipe, je souhaite gérer les tests afin de modifier un test.										|	16		 |	 3
 28 | En tant que membre de l’équipe, je souhaite rédiger un document afin d’expliquer ce que j’ai fait. 						|	17		 |	 5					
-   |																																		 |	102
+   | ****************************************************************************************************************************************|	102
