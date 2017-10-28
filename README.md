@@ -1,31 +1,20 @@
-Id |							User Story																						| Priority	 |  Cost
----|----------------------------------------------------------------------------------------------------------------------------|------------|------------
-1  | En tant que visiteur, je souhaite m'inscrire afin de devenir utilisateur de l'application.									|	1		 |	 8
-2  | En tant qu'utilisateur, je souhaite me connecter afin d’utiliser l’application.											|	2		 |	 5
-3  | En tant qu’utilisateur connecté, je souhaite me déconnecter afin de quitter l’application									|	3		 |	 2
-4  | En tant qu’utilisateur connecté, je souhaite créer une équipe afin de travailler ensemble.									|	3		 |	 5
-5  | En tant qu’utilisateur connecté, je souhaite visualiser la liste des invitations afin de les accepter ou refuser			|	3		 |	 8
-6  | En tant qu’utilisateur connecté, je souhaite visualiser la liste des équipes dont je suis membre afin d’y accéder.			|	6		 |	 3
-7  | En tant que product owner, je souhaite visualiser mes équipes afin de les gérer.											|	4		 |	 3
-8  | En tant que product owner, je souhaite gérer mes équipes afin de supprimer un membre.										|	5		 |	 3
-9  | En tant que product owner, je souhaite gérer mes équipes afin d’ajouter un membre.											|	5		 |	 5
-10 | En tant que product owner, je peux inviter un membre en spécifiant ces droits afin de l’intégrer dans mon équipe.			|	7		 |	 5
-11 | En tant que membre de l’équipe, je souhaite visualiser le backlog afin d’identifier les besoins du projet.					|	8		 |	 2
-12 | En tant que product owner, je peux ajouter  un user story afin de mettre à jour le backlog.								|	9		 |	 5
-13 | En tant que product owner, je peux modifier un user story afin de mettre à jour le backlog.								|	9		 |	 3
-14 | En tant que product owner, je peux supprimer un user story afin de mettre à jour le backlog								|	9		 |	 2
-15 | En tant que membre de l’équipe, je souhaite visualiser les tâches afin de suivre l’avancement projet.						|	12		 |	 2
-16 | En tant que Scrum Master , je peux m’affecter une tâche ou l’affecter à un autre membre afin de faire la répartition		|	11		 |	 5
-17 | En tant que Scrum Master, je souhaite gérer les tâches afin d’ajouter une tâche .											|	10		 |	 5
-18 | En tant que Scrum Master, je souhaite gérer les tâches afin de supprimer une tâche.										|	12		 |	 2
-19 | En tant que Scrum Master, je souhaite gérer les tâches afin de modifier une tâche.											|	12		 |	 3
-20 | En tant que membre de l’équipe, je souhaite visualiser les builds afin de les gérer.										|	14		 |	 2
-21 | En tant que membre de l’équipe, je souhaite gérer les builds afin d’ajouter un build.										|	13		 |	 5
-22 | En tant que membre de l’équipe, je souhaite gérer les builds afin de supprimer un build.									|	14		 |	 2
-23 | En tant que membre de l’équipe, je souhaite gérer les builds afin de modifier un build.									|	14		 |	 3
-24 | En tant que membre de l’équipe, je souhaite visualiser les tests afin de les gérer.										|	16		 |	 2
-25 | En tant que membre de l’équipe, je souhaite gérer les tests afin d’ajouter un test.										|	15		 |	 5
-26 | En tant que membre de l’équipe, je souhaite gérer les tests afin de supprimer un test.										|   16		 |	 2
-27 | En tant que membre de l’équipe, je souhaite gérer les tests afin de modifier un test.										|	16		 |	 3
-28 | En tant que membre de l’équipe, je souhaite rédiger un document afin d’expliquer ce que j’ai fait. 						|	17		 |	 5					
-29 | Cout du Backlog													                                                        |            |	102
+Id |							User Story																																																										  	   | Priority    |  Cost
+---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|------------
+1  | En tant que visiteur, je souhaite m’inscrire dans l’application en donnant mon nom et mon mot de passe.																																											   	   |	-		 |	 -
+2  | En tant qu’utilisateur, je souhaite pouvoir me connecter/déconnecter afin d’utiliser/quitter l’application.																																										   |	-		 |	 -
+3  | En tant qu’utilisateur connecté, je souhaite pouvoir créer une équipe de projet en lui donnant un nom, une description  afin de commencer à travailler sur un projet. 																									       |	-		 |	 -
+4  | En tant qu’utilisateur connecté, je souhaite pouvoir visualiser la liste des équipes dont je suis membre afin de consulter leur composition.																																	   |	-		 |	 -
+5  | En tant que membre de l'équipe, je souhaite pouvoir inviter un autre membre dans mon équipe de projet en lui spécifiant ses droits (scrum master, développeur) afin de l’intégrer dans mon équipe et mettre à jour la composition.															  				   |	-		 |	 -
+6  | En tant que membre d'une équipe, je souhaite pouvoir voir le backlog d'un projet afin d'y lister toutes les user stories du projet.																																			       |	-		 |	 -
+7  | En tant que membre d'une équipe, je souhaite pouvoir créer un ou plusieurs users stories (identifiant, description, priorité, difficulté ) afin de mettre à jour le backlog d'un projet.																						   |	-		 |	 -
+8  | En tant que product owner, je souhaite pouvoir saisir / modifier les priorités des user stories du backlog d'un projet afin de préparer correctement la planification du projet.			 	   |	-		 |	 -
+9 | En tant que membre de l'équipe je souhaite créer des sprints à partir du backlog en fixant en premier lieu le nombre de sprints et le temps afin de les planifier.	  	   |	-		 |	 -
+10 | En tant que membre de l'équipe je souhaite pouvoir ajouter une tâche à partir d’une User Story, afin de découper une User Story.	  	   |	-		 |	 -
+11 | En tant que  membre d'une équipe , je souhaite pouvoir ajouter/modifier/supprimer une ou plusieurs tâches d'un projet (id, nom, description, id user story ciblée, personne en charge), chaque tâche ayant une description et un membre qui va la faire, zéro ou plusieurs user stories ciblées, afin de planifier corretement les sprints. 			   	   |	-		 |	 -
+12 | En tant que membre d'une équipe je souhaite voir l'ensemble des tâches à faire ou faites ou en cours de réalisation ainsi que pour chaque tâche l'ensemble des User Stories auxquel elle appartient afin  de savoir l'état d'avancement d'un projet. 																												   |	-		 |	 -
+13 | En tant que membre d'une équipe, je souhaite pouvoir m'affecter une tâche  (à l'écran de liste des tâches) afin de répartir convenablement le travail dans l'équipe.																									   |	-		 |	 -
+14 | En tant que membre d'une équipe je souhaite pouvoir consulter l'ensemble des sprints chaque sprint contient un ensemble de tâches à faire , faite ou en cours afin de suivre l'avancement d'un projet.																										           |	-		 |	 -
+15 | En tant que membre d'une équipe, je souhaite pouvoir modifier un sprint en y ajoutant/supprimant des tâches afin de revoir l'organisation déjà établie.																														   |	-		 |	 -
+16 | En tant que membre d'une équipe, je souhaite pouvoir visualiser et modifier l'avancement de chaque Sprint jour par jour en déplaçant les tâches dans les colonnes correspondant à leur état (to do, progressing, done) afin de déterminer le travail achevé et le reste à faire.  |	-		 |	 -
+17 | En tant que membre d'une équipe, je souhaite pouvoir ajouter un  build (id, nom, id Sprint correspondant, lien de stockage) à la fin de chaque sprint afin de pouvoir finaliser ce dernier. 																											   |	-		 |	 -
+18 | En tant que membre d'une équipe , je souhaite pouvoir pour chaque user story du backlog d'un projet ajouter/consulter/modifier les tests correspondants ainsi que la documentation (id User Story, lien test, lien documentation) afin de pouvoir suivre l'acheminement du projet.   																   |    -        |   -                   
