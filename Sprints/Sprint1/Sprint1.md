@@ -4,9 +4,14 @@
 | 2  | Définir les interations entre la couche métier et données (écrire les requêtes SQL) | 1,2,3 |  | 2
 | 3  | Définir les interations entre la couche présentation et métier | 1,2,3 |  | 1
 | 4  | Mettre en place la base de données | 1,2,3 |  | 0.5
-| 5  | Implémenter la page d'inscription (interface graphique) : création d'un formulaire (email, mdp) | 1 |  | 2
-| 6  | Implémenter la page d'inscription (JS) : récupérer les champs et les envoyer au serveur | 1 |  | 3
+| 5  | <ul><h1>Implémenter la page d'inscription (interface graphique) : création d'un formulaire (email, mdp)</h1><li>jjjjjjj</li></ul>  | 1 |  | 2
+| 5.1  | Création d'un formulaire (email, mdp) | | | 
+| 6  | Implémenter la page d'inscription (JS) | 1 |  | 3
+| 6.1  | Récupérer les champs et les envoyer au serveur | | | 
 | 7  | Implémenter la partie serveur de la page d'inscription : - récupérer les champs envoyés; - exécuter une requête qui prend les champs en paramètre; - retourner le résultat de la requête | 1 |  | 1
+| 7.1  | Récupérer les champs et les envoyer au serveur | | | 
+| 7.2  | Récupérer les champs et les envoyer au serveur | | | 
+| 7.3  | Récupérer les champs et les envoyer au serveur | | | 
 | 8  | Implémenter la page de connexion/déconnexion (interface graphique) :
         - création d'un formulaire d'authentification (email, mdp) 
         - création d'un bouton de déconnexion
