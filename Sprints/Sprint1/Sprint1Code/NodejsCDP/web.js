@@ -43,7 +43,7 @@ router.route('/user').post(function(request,response,next){
 
         if (error) return next("Impossible de ce connecter");
 
-        var requete = connection.query('SELECT  * FROM utilisateurs where email like "'+email+'" and password like "'+password+'" ',function(error,data){
+        var requete = connection.query('SELECT  * FROM utilisateurs where email = "'+email+'" and password = "'+password+'" ',function(error,data){
 
             if(error){
                 console.log(error);
@@ -63,6 +63,121 @@ router.route('/user').post(function(request,response,next){
     });
 
 });
+
+
+
+router.route('/invite').post(function(request,response,next){
+var invitEmail = request.body.invitEmail;
+var projectName = request.body.projectName;
+
+
+request.getConnection(function(error,connection){
+    
+    if (error) return next("Impossible de ce connecter");
+
+connection.query('select COUNT(*) as counting from equipes where idutilisateur = (SELECT id from utilisateurs where email = "'+invitEmail+'") AND idprojet = (select id from projets where nom = "'+projectName+'")',function(error,data){
+   
+
+        if(error){
+            console.log(error);
+            return next("Erreur de requete");
+        }
+        else
+        {
+        
+            if(data[0].counting > 0)
+            {
+            	response.send(JSON.stringify({ 
+				                result : 0,
+				                
+				            }));
+            }
+            else
+            {
+            	connection.query(' INSERT INTO equipes ( idutilisateur, idprojet ) SELECT A.id, B.id FROM utilisateurs A, projets B WHERE A.email="'+invitEmail+'" AND B.nom="'+projectName+'" ',function(error,data){
+
+				        if(error){
+				            console.log(error);
+				            return next("Erreur de requete");
+				        }
+				        else
+				        {
+				        	let valid = 0;
+				        	if(data.affectedRows > 0) valid = 1;
+
+
+				            response.send(JSON.stringify({ 
+				                result : valid,
+				                
+				            }));
+				            
+				        }           
+
+				});
+
+            }
+            
+        }    
+          });       
+
+
+
+
+
+});
+
+
+
+});
+
+
+
+
+
+router.route('/equipes').get(function(request,response,next){
+  // resultat des requêtes
+  var res = [];
+
+    request.getConnection(function(error,connection){
+        if (error) return next("Impossible de se connecter");
+
+        // Récupération des équipes avec l'id utilisateur
+        connection.query('SELECT * FROM equipes where idutilisateur="'+request.query.id+'"', function(error, data) {
+          if(error){
+            console.log(error);
+            return next("Impossible d'obtenir la liste des champs de la table equipes");
+          }
+          else {
+            // Si liste équipes ok, récupération de la liste de tous les projets
+            connection.query('SELECT * FROM projets', function(err, d) {
+            if (err) {
+              console.log(err);
+              return next(err);
+            }
+            else {
+              // Comparaison et récupération des id des projets de 'projets' avec les id de la table 'equipes'
+              for (var i = 0; i < d.length; i++) {
+                for (var j = 0; j < data.length; j++) {
+                  if (d[i].id == data[j].idprojet) {
+                    res.push(d[i]);
+                  }
+                }
+              }
+
+              // Envoi de la réponse
+              response.send(JSON.stringify({
+                result : res
+              }));
+            }
+          });
+         }
+        });
+    });
+});
+
+
+
+
 
 
 var server = app.listen(3000,function(){

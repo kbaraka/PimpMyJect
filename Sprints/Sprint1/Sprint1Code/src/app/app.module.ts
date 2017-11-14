@@ -9,7 +9,8 @@ import { AppGuard } from './guard/app.guard';
 import { LoginComponent } from './login/login.component';
 import { Component1Component } from './component1/component1.component';
 import { Component2Component } from './component2/component2.component';
-import { TestComponent } from './test/test.component';
+import { InvitationComponent } from './invitation/invitation.component';
+import { EquipesComponent } from './equipes/equipes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TestComponent } from './test/test.component';
     LoginComponent,
     Component1Component,
     Component2Component,
-    TestComponent,
+    InvitationComponent,
+    EquipesComponent,
   ],
   imports: [
     BrowserModule,

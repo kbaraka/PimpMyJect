@@ -15,16 +15,14 @@ export class LoginComponent implements OnInit {
   }
   Onclick() {
     this.http.post('http://localhost:3000/user', { email: this.email, password: this.password }).subscribe(response => {
-       if (JSON.parse(response['_body']).result) {
+      if (JSON.parse(response['_body']).result) {
         this.guard.SetUser(JSON.parse(response['_body']).result);
         this.guard.LogIn();
         this.router.navigate(['/friends']);
-      }
-      else {
-
+      }else {
         alert('!!!!Utilisteur Inconu Veuillez resaisir un Email et Password Valid !!!!');
         this.router.navigate(['/login']);
-      } 
+      }
 
     });
 
