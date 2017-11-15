@@ -7,8 +7,7 @@ import { AppComponent } from './app/app.component';
 import { APP_ROUTES } from './routes/app.routes';
 import { AppGuard } from './guard/app.guard';
 import { LoginComponent } from './login/login.component';
-import { Component1Component } from './component1/component1.component';
-import { Component2Component } from './component2/component2.component';
+
 import { InvitationComponent } from './invitation/invitation.component';
 import { EquipesComponent } from './equipes/equipes.component';
 
@@ -16,8 +15,6 @@ import { EquipesComponent } from './equipes/equipes.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    Component1Component,
-    Component2Component,
     InvitationComponent,
     EquipesComponent,
   ],
