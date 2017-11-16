@@ -9,6 +9,8 @@ export class AppGuard implements CanActivate {
   LogIn() { this.token = true; }
   LogOut() { this.token = false; }
   canActivate() {
+    this.token = (localStorage.getItem('token') == 'true');
+    this.user = JSON.parse(localStorage.getItem('user'));
     if (this.token) {
       return this.token;
     }

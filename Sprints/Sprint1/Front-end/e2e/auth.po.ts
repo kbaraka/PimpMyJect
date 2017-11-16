@@ -11,10 +11,8 @@ export class Authentification {
         email.sendKeys('test@gmail.com');
         password.sendKeys('0000');
         submit.click();
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/');
-        const logout = element(by.id('logout'));
-        logout.click();
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/equipes');
+
     }
 
     checkunauth() {
@@ -26,9 +24,9 @@ export class Authentification {
         submit.click();
         const alertDialog = browser.switchTo().alert();
         expect(alertDialog.getText()).toEqual('!!!!Utilisteur Inconu Veuillez resaisir un Email et Password Valid !!!!');
-        browser.sleep(1000);
+        browser.sleep(300);
         alertDialog.accept();
-        browser.sleep(1000);
+        browser.sleep(300);
         expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
     }
 }

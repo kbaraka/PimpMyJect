@@ -30,10 +30,6 @@ export class InvitationComponent implements OnInit {
 
   }
   ngOnInit() {
-    if (this.guard.canActivate() == true) {  
-
-    
-    }
   }
 
 }

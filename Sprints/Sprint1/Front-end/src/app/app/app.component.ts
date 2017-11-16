@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  LogOut() {this.guard.LogOut(); this.router.navigate(['/login']);}
+  LogOut() { this.guard.LogOut(); localStorage.removeItem('token'); this.router.navigate(['/login']); }
+
 
 
 
