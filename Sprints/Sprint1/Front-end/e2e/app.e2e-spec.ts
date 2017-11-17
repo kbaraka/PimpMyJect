@@ -20,7 +20,7 @@ describe('CDP App', () => {
     browser.driver.controlFlow().execute = function () {
       var args = arguments;
       origFn.call(browser.driver.controlFlow(), function () {
-        return protractor.promise.delayed(2);
+        return protractor.promise.delayed(5);
       });
       return origFn.apply(browser.driver.controlFlow(), args);
     };
