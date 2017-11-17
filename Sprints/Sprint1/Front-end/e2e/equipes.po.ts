@@ -10,7 +10,7 @@ export class Equipes {
         equipe.click();
         expect(element(by.xpath('.//*[.="cdp-projet"]')).isPresent()).toBeTruthy();
     }
-   
+
 
 
 }

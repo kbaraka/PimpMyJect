@@ -23,10 +23,11 @@ export class Authentification {
         password.sendKeys('0000');
         submit.click();
         const alertDialog = browser.switchTo().alert();
+        browser.sleep(1000);
         expect(alertDialog.getText()).toEqual('!!!!Utilisteur Inconu Veuillez resaisir un Email et Password Valid !!!!');
-        browser.sleep(300);
+        browser.sleep(1000);
         alertDialog.accept();
-        browser.sleep(300);
+        browser.sleep(1000);
         expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
     }
 }

@@ -12,6 +12,7 @@ export class Register {
         password.sendKeys('0000');
         submit.click();
         const alertDialog = browser.switchTo().alert();
+        browser.sleep(1000);
         expect(alertDialog.getText()).toEqual('Vous  êtes bien inscrit veuillez vous connecter');
         browser.sleep(1000);
         alertDialog.accept();
@@ -27,6 +28,7 @@ export class Register {
         password.sendKeys('0000');
         submit.click();
         const alertDialog = browser.switchTo().alert();
+        browser.sleep(1000);
         expect(alertDialog.getText()).toEqual('!!!! Information Incorrect !!!!');
         browser.sleep(1000);
         alertDialog.accept();

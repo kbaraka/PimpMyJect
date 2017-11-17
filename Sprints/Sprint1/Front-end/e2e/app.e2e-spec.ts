@@ -15,12 +15,12 @@ describe('CDP App', () => {
   let register: Register;
 
   beforeEach(() => {
-  
+
     var origFn = browser.driver.controlFlow().execute;
     browser.driver.controlFlow().execute = function () {
       var args = arguments;
       origFn.call(browser.driver.controlFlow(), function () {
-        return protractor.promise.delayed(5);
+        return protractor.promise.delayed(2);
       });
       return origFn.apply(browser.driver.controlFlow(), args);
     };

@@ -7,16 +7,18 @@ export class Project {
 
     AddProject() {
         const project = element(by.id('projectlink'));
-           project.click();
+        project.click();
         const projectname = element(by.id('projectName'));
         const submit = element(by.id('btn-invitation'));
         projectname.sendKeys('cdp-projet');
         submit.click();
-        browser.sleep(300);
+        browser.sleep(1000);
         const alertDialog = browser.switchTo().alert();
+        browser.sleep(1000);
         expect(alertDialog.getText()).toEqual('Projet créer avec succes');
+        browser.sleep(1000);
         alertDialog.accept();
-        browser.sleep(300);
+        browser.sleep(1000);
 
     }
 
@@ -26,7 +28,7 @@ export class Project {
         project.click();
         const projectname = element(by.id('projectName'));
         const submit = element(by.id('btn-invitation'));
-        projectname.clear().then(function(){
+        projectname.clear().then(function () {
             projectname.sendKeys('cdp-projet');
         });
         submit.click();

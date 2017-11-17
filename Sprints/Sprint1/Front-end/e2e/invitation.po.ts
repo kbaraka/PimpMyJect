@@ -7,7 +7,7 @@ export class Invitation {
 
     AddMember() {
         const invitation = element(by.id('invitlink'));
-           invitation.click();
+        invitation.click();
         const email = element(by.id('invitEmail'));
         const project = element(by.id('projectName'));
         const submit = element(by.id('btn-invitation'));
