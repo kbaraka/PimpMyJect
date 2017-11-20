@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, protractor} from 'protractor';
 
 export class Authentification {
     navigateTo() {
@@ -23,11 +23,9 @@ export class Authentification {
         password.sendKeys('0000');
         submit.click();
         const alertDialog = browser.switchTo().alert();
-        browser.sleep(1000);
+        browser.wait(protractor.ExpectedConditions.alertIsPresent(), 1500);
         expect(alertDialog.getText()).toEqual('!!!!Utilisteur Inconu Veuillez resaisir un Email et Password Valid !!!!');
-        browser.sleep(1000);
         alertDialog.accept();
-        browser.sleep(1000);
         expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
     }
 }

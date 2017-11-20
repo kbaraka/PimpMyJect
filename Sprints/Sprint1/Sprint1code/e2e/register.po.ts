@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, protractor } from 'protractor';
 
 export class Register {
     navigateTo() {
@@ -12,11 +12,10 @@ export class Register {
         password.sendKeys('0000');
         submit.click();
         const alertDialog = browser.switchTo().alert();
-        browser.sleep(1000);
+        browser.wait(protractor.ExpectedConditions.alertIsPresent(), 1500); 
         expect(alertDialog.getText()).toEqual('Vous  êtes bien inscrit veuillez vous connecter');
-        browser.sleep(1000);
         alertDialog.accept();
-        browser.sleep(1000);
+      
 
     }
 

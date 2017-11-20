@@ -39,22 +39,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if (this.guard.canActivate() == true) { this.router.navigate(['/equipes']); }
   }
-  Onclick2() {
-    if (this.email === '' || this.password === '') {
-      alert("Veuillez Remplir le formulaire");
-    }
-    else {
-      this.http.post('http://localhost:3000/addUser', { email: this.email, password: this.password }).subscribe(response => {
 
-        if (JSON.parse(response['_body']).result) {
-          alert("Vous  êtes bien inscrit veuillez vous connecter");
-        } else {
-          alert('!!!! Information Incorrect !!!!');
-          this.router.navigate(['/login']);
-        }
-
-      });
-    }
-  }
 
 }

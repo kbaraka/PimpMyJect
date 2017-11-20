@@ -7,17 +7,12 @@ import { AppComponent } from './app/app.component';
 import { APP_ROUTES } from './routes/app.routes';
 import { AppGuard } from './guard/app.guard';
 import { LoginComponent } from './login/login.component';
-import { InvitationComponent } from './invitation/invitation.component';
-import { EquipesComponent } from './equipes/equipes.component';
-import { ProjectComponent } from './project/project.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InvitationComponent,
-    EquipesComponent,
-    ProjectComponent,
   ],
   imports: [
     BrowserModule,
