@@ -36,6 +36,28 @@ export class LoginComponent implements OnInit {
 
   }
 
+  signUp()
+  {
+    if (this.email === '' || this.password === '') {
+      alert("Veuillez Remplir le formulaire");
+    }
+    else
+    {
+
+      this.http.post('http://localhost:3000/addUser', { email: this.email, password: this.password }).subscribe(response => {
+        if (JSON.parse(response['_body']).result)
+        {
+          alert('Inscription avec succès');
+        }
+        else
+        {
+          alert('Echec de l inscription');
+        }
+
+      });
+    }
+  }
+
   ngOnInit() {
     if (this.guard.canActivate() == true) { this.router.navigate(['/equipes']); }
   }

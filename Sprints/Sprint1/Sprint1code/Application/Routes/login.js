@@ -25,6 +25,8 @@ module.exports = function(app) {
         });
     });
 
+
+
     app.post('/addUser', function(request, response, next) {
         var email = request.body.email;
         var password = request.body.password;
