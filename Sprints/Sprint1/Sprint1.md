@@ -10,7 +10,7 @@
 
 | 2  | Configuration du serveur NodeJs :  <ul><li>Installer les dépendances : express,path,body,cors,express-myconnection,mysql,nodemon</li><li>Configurer la base de données Mysql</li></ul>Configurer la partie Angular : <ul><li>Installer Bootstrap</li><li>Mettre en place un systeme de routage</li><li>Mettre en place Protractor pour les tests E2E</li></ul>| - | Taha Benchikhi 
 | 3  | Mettre en place la base de données <ul><li>Création de la table "UTILISATEURS" <ul><li>id : int</li><li>email : String</li><li>password : String</li></ul></li><li>Création de la table "PROJETS" <ul><li>id : int</li><li>nom : String</li></ul></li><li>Création de la table "ÉQUIPES" <ul><li>idprojet : int</li><li>idutilisateur : int</li></ul></li></ul>| 1,2,3 | Rihab Tlili 
-|Id tâche | Tâche |Id User Story | Personne en charge |
+|Id tâche       | Tâche          |Id User Story | Personne en charge |
 |-------------- | ------------- |------------- | ------------- |
 | 1  | Définir les intérations entre la couche métier et la couche données pour la US1 (écrire les requêtes SQL) : <ul><li>Écrire la requête SQL qui permet d'ajouter un nouvel utilisateur à la table "UTILISATEURS"</li><li>Écrire la requête SQL qui permet de verifier l'existance d'un utilisateur dans la table "UTILISATEURS"</li><li>Écrire la requête SQL qui permet de verifier si un email exist dans la table "UTILISATEURS"</li></ul>  | 1 | Bastien Maurice |  
 | 2  | Définir les intérations entre la couche métier et la couche données pour la US2  (écrire les requêtes SQL) : <ul><li>Écrire la requête sql qui permet de vérifier la présence d’un enregistrement dans la table "UTILISATEURS" correspondant aux informations envoyés (login/pwd)</li></ul> | 2 | Taha Benchikhi  |
@@ -39,4 +39,5 @@
 | 25  | Implémenter la partie serveur de la page d'invitation d'un membre à une équipe :<ul><li>récupérer les champs envoyés</li><li>Exécuter les requêtes qui prennent les champs en paramètres</li><li>Retourner le résultat de la requête </li></ul> | 5 | Rihab Tlili |
 | 26  | Exécuter les tests E2E | 1,2,3,4,5 | Kevin Marzin |
 | 27  | Génerer le build du premier sprint | - | Taha Benchikhi |
+
 
