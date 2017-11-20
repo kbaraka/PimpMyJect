@@ -32,6 +32,6 @@
 | 30  | Implémenter la page d'invitation d'un membre à une équipe (interface graphique) : <ul><li>Création d'un formulaire d'invitation à un projet (nom d'utilisateur, nom du projet) </li></ul> | 5 | Rihab Tlili |
 | 31  | Implémenter la page d'invitation d'un membre à une équipe (JS) : <ul><li>Récupérer les champs et l'envoyer au serveur</li><li>Affichage d'un message d'erreur si échec</li></ul> | 5 | Rihab Tlili |
 | 32  | Implémenter la partie serveur de la page d'invitation d'un membre à une équipe :<ul><li>récupérer les champs envoyés</li><li>Exécuter les requêtes qui prennent les champs en paramètres</li><li>Retourner le résultat de la requête </li></ul> | 5 | Rihab Tlili |
-| 33  | Exécuter les tests E2E | 1,2,3,4,5 | Kevin Marzin |
+| 33  | Exécuter les tests E2E | - | Kevin Marzin |
 | 34  | Génerer le build du premier sprint | - | Taha Benchikhi |
 
