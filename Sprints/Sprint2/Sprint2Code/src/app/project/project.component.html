@@ -1,0 +1,30 @@
+<div class="container">
+  <form class="form-horizontal" id="invitationform">
+    <legend>
+      Créer un nouveau projet
+    </legend>
+
+
+    <div class="form-group">
+      <div>
+        <label class="col-sm-2 control-label">Nom du projet</label>
+        <div class="col-sm-10">
+          <input #project  name="projectName" class="form-control" id="projectName" type="text" placeholder="nom du projet">
+          <span class="help-block">Entrez le nom du projet </span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- Button -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-primary" id="btn-invitation" type="submit" (click)='CreateProject(project)'>Envoyer </button>
+          <button class="btn btn-default" type="reset">Annuler </button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
