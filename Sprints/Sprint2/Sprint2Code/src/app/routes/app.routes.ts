@@ -8,6 +8,8 @@ import { ListComponent } from './../equipes/list/list.component';
 import { WorkspaceComponent } from './../equipes/workspace/wrokspace.component';
 import { BacklogComponent } from './../equipes/workspace/backlog/backlog.component';
 import { ProjectComponent } from '../project/project.component';
+import { ListUserStoryComponent } from './../equipes/workspace/backlog/list-user-story/list-user-story.component';
+
 export const APP_ROUTES: Routes = [
   { path: 'invitation', canActivate: [AppGuard], component: InvitationComponent },
   { path: 'project', canActivate: [AppGuard], component: ProjectComponent },
@@ -17,7 +19,13 @@ export const APP_ROUTES: Routes = [
       { path: '', component: ListComponent },
       {
         path: 'workspace', component: WorkspaceComponent, children: [
-          { path: 'backlog', canActivate: [WorkspaceGuard], component: BacklogComponent },
+          {
+            path: 'backlog', canActivate: [WorkspaceGuard], component: BacklogComponent, children: [
+            {
+              path: 'listUserStory', component: ListUserStoryComponent
+            }
+          ]
+          },
         ]
       }
     ]
