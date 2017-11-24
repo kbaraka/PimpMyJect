@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, RequestOptions, URLSearchParams, ResponseContentType } from '@angular/http';
-import { AppGuard } from '../../guard/app.guard';
 
 
 
@@ -25,7 +24,7 @@ export class ListUserStoryComponent implements OnInit {
     requestOptions.responseType = ResponseContentType.Json;
 
     // Requête GET
-    this.http.get('http://localhost:3000/listUserStory').subscribe(response => {
+    this.http.get('http://localhost:3000/listUserStory', requestOptions).subscribe(response => {
 
       this.backlog = response['_body'].result;
       },

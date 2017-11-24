@@ -18,17 +18,17 @@ module.exports = function(app) {
           console.log(error);
           return next("Erreur de requete");
         } else {
-          res.push(data);
+          response.send(JSON.stringify({
+            result : data
+
+          }));
 
         }
 
 
       });
 
-      //envoi de la reponse
-      response.send(JSON.stringify({
-        result : res
-      }));
+
 
     });
 
