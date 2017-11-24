@@ -16,7 +16,6 @@ export class CreateUserStoryComponent implements OnInit {
   private inputPriority;
   private inputDifficulty;
   private inputDescription;
-  private alert: Alert;
 
   public constructor(private http: Http) {
       this._http = http;
@@ -34,6 +33,10 @@ export class CreateUserStoryComponent implements OnInit {
       }
       else if (JSON.parse(response['_body']).result === 1) {
         alert('Insertion réalisée.');
+        this.inputDescription = '';
+        this.inputNumber = '';
+        this.inputPriority = '';
+        this.inputDifficulty = '';
       }
       else {
         alert('Une erreur est survenue.');
