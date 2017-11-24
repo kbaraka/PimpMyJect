@@ -1,11 +1,11 @@
-module.exports = function(app) {  
+module.exports = function(app) {
 
 app.get('/equipes',function(request,response,next){
   // resultat des requêtes
 
   var res = [];
 
-  
+
     request.getConnection(function(error,connection){
         if (error) return next("Impossible de se connecter");
 
@@ -23,7 +23,7 @@ app.get('/equipes',function(request,response,next){
               return next(err);
             }
             else {
-              
+
               // Comparaison et récupération des id des projets de 'projets' avec les id de la table 'equipes'
               for (var i = 0; i < d.length; i++) {
                 for (var j = 0; j < data.length; j++) {
@@ -32,7 +32,7 @@ app.get('/equipes',function(request,response,next){
                   }
                 }
               }
-              
+
               // Envoi de la réponse
               response.send(JSON.stringify({
                 result : res

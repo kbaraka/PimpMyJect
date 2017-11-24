@@ -5,17 +5,19 @@
         <li routerLinkActive="active">
           <a routerLink="/equipes/workspace/backlog">Backlog</a>
         </li>
-
+        <li>
+            <a routerLink="/equipes/workspace/create-user-story">Ajouter une US</a>
+          </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-              
+
               <div id='information'><button class="btn btn-success">{{equipe[0].nom}}</button></div>
         </li>
       </ul>
     </div>
   </nav>
-</div> 
+</div>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
