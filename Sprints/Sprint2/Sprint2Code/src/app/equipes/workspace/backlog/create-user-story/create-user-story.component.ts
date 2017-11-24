@@ -29,10 +29,14 @@ export class CreateUserStoryComponent implements OnInit {
     this.http.post('http://localhost:3000/backlog/create-us',
     { projectID: JSON.parse(localStorage.getItem('currentequipe'))['0'].id, numberUS: this.inputNumber, priorityUS: this.inputPriority,
       difficultyUS: this.inputDifficulty, descriptionUS: this.inputDescription }).subscribe(response => {
-      if (JSON.parse(response['_body']).result === 1) {
+      if (JSON.parse(response['_body']).result === 'invalid form') {
+        alert('Veuillez remplir le formulaire en entier.');
+      }
+      else if (JSON.parse(response['_body']).result === 1) {
         alert('Insertion réalisée.');
-      } else {
-        alert('Insertion impossible !');
+      }
+      else {
+        alert('Une erreur est survenue.');
       }
     });
   }
