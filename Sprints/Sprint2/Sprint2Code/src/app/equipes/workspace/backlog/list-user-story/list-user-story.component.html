@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Num US</th>
+      <th>Description</th>
+      <th>Priorite</th>
+      <th>Difficulte</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let back of backlog">
+      <td>{{back.numero}}</td>
+      <td>{{back.description}}</td>
+      <td>{{back.priorite}}</td>
+      <td>{{back.difficulte}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+

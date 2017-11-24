@@ -13,5 +13,6 @@ export class EquipesComponent implements OnInit {
   constructor(private guard: AppGuard, private http: Http) { }
 
   ngOnInit() {
+
   }
 }
