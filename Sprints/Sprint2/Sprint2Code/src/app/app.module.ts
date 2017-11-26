@@ -16,8 +16,8 @@ import { BacklogComponent } from './equipes/workspace/backlog/backlog.component'
 import { ProjectComponent } from './project/project.component';
 import { CreateUserStoryComponent } from './equipes/workspace/backlog/create-user-story/create-user-story.component';
 import { ListUserStoryComponent } from './equipes/workspace/backlog/list-user-story/list-user-story.component';
-
-
+import { CreateSprintComponent } from './equipes/workspace/create-sprint/create-sprint.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,11 +31,13 @@ import { ListUserStoryComponent } from './equipes/workspace/backlog/list-user-st
     BacklogComponent,
     CreateUserStoryComponent,
     ListUserStoryComponent,
+    CreateSprintComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       APP_ROUTES,
       { enableTracing: true }

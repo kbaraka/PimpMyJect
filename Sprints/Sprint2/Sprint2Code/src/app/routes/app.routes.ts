@@ -10,6 +10,8 @@ import { BacklogComponent } from './../equipes/workspace/backlog/backlog.compone
 import { ProjectComponent } from '../project/project.component';
 import { CreateUserStoryComponent } from '../equipes/workspace/backlog/create-user-story/create-user-story.component';
 import { ListUserStoryComponent } from './../equipes/workspace/backlog/list-user-story/list-user-story.component';
+import { CreateSprintComponent } from './../equipes/workspace/create-sprint/create-sprint.component';
+
 export const APP_ROUTES: Routes = [
   { path: 'invitation', canActivate: [AppGuard], component: InvitationComponent },
   { path: 'project', canActivate: [AppGuard], component: ProjectComponent },
@@ -29,6 +31,7 @@ export const APP_ROUTES: Routes = [
             ]
 
           },
+          { path: 'createsprint', canActivate: [WorkspaceGuard], component: CreateSprintComponent },
 
         ]
       }
