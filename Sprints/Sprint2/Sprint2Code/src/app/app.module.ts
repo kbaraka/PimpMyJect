@@ -11,9 +11,11 @@ import { LoginComponent } from './login/login.component';
 import { InvitationComponent } from './invitation/invitation.component';
 import { EquipesComponent } from './equipes/equipes.component';
 import { ListComponent } from './equipes/list/list.component';
-import { WorkspaceComponent } from './equipes/workspace/wrokspace.component';
+import { WorkspaceComponent } from './equipes/workspace/workspace.component';
 import { BacklogComponent } from './equipes/workspace/backlog/backlog.component';
 import { ProjectComponent } from './project/project.component';
+import { CreateUserStoryComponent } from './equipes/workspace/backlog/create-user-story/create-user-story.component';
+import { ListUserStoryComponent } from './equipes/workspace/backlog/list-user-story/list-user-story.component';
 import { CreateSprintComponent } from './equipes/workspace/create-sprint/create-sprint.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -27,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListComponent,
     WorkspaceComponent,
     BacklogComponent,
+    CreateUserStoryComponent,
+    ListUserStoryComponent,
     CreateSprintComponent,
   ],
   imports: [
