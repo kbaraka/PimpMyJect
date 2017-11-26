@@ -15,7 +15,7 @@ import { WorkspaceComponent } from './equipes/workspace/wrokspace.component';
 import { BacklogComponent } from './equipes/workspace/backlog/backlog.component';
 import { ProjectComponent } from './project/project.component';
 import { CreateSprintComponent } from './equipes/workspace/create-sprint/create-sprint.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { CreateSprintComponent } from './equipes/workspace/create-sprint/create-
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       APP_ROUTES,
       { enableTracing: true }
