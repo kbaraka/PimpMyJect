@@ -7,7 +7,7 @@
 
 # dependencies
 node_modules
-Application/node_modules
+Serveur/node_modules
 
 # IDEs and editors
 /.idea
