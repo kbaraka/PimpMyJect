@@ -21,12 +21,15 @@ export const APP_ROUTES: Routes = [
         path: 'workspace', component: WorkspaceComponent, children: [
           {
             path: 'backlog', canActivate: [WorkspaceGuard], component: BacklogComponent, children: [
-            {
-              path: 'listUserStory', component: ListUserStoryComponent
-            }
+
+              { path: 'listUserStory', canActivate: [WorkspaceGuard], component: ListUserStoryComponent },
               { path: 'create-user-story', canActivate: [WorkspaceGuard], component: CreateUserStoryComponent }
-          ]
+
+
+            ]
+
           },
+
         ]
       }
     ]
