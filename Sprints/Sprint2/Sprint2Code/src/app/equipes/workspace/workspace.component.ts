@@ -11,7 +11,7 @@ export class WorkspaceComponent implements OnInit {
 
   ngOnInit() {
     this.equipe = JSON.parse(localStorage.getItem('currentequipe'));
-    
+
   }
 
 }

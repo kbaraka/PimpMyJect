@@ -11,10 +11,12 @@ import { LoginComponent } from './login/login.component';
 import { InvitationComponent } from './invitation/invitation.component';
 import { EquipesComponent } from './equipes/equipes.component';
 import { ListComponent } from './equipes/list/list.component';
-import { WorkspaceComponent } from './equipes/workspace/wrokspace.component';
+import { WorkspaceComponent } from './equipes/workspace/workspace.component';
 import { BacklogComponent } from './equipes/workspace/backlog/backlog.component';
 import { ProjectComponent } from './project/project.component';
+import { CreateUserStoryComponent } from './equipes/workspace/backlog/create-user-story/create-user-story.component';
 import { ListUserStoryComponent } from './equipes/workspace/backlog/list-user-story/list-user-story.component';
+
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { ListUserStoryComponent } from './equipes/workspace/backlog/list-user-st
     ListComponent,
     WorkspaceComponent,
     BacklogComponent,
+    CreateUserStoryComponent,
     ListUserStoryComponent,
   ],
   imports: [
