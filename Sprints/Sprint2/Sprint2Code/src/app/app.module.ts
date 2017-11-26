@@ -15,6 +15,8 @@ import { WorkspaceComponent } from './equipes/workspace/workspace.component';
 import { BacklogComponent } from './equipes/workspace/backlog/backlog.component';
 import { ProjectComponent } from './project/project.component';
 import { CreateUserStoryComponent } from './equipes/workspace/backlog/create-user-story/create-user-story.component';
+import { ListUserStoryComponent } from './equipes/workspace/backlog/list-user-story/list-user-story.component';
+
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { CreateUserStoryComponent } from './equipes/workspace/backlog/create-use
     WorkspaceComponent,
     BacklogComponent,
     CreateUserStoryComponent,
+    ListUserStoryComponent,
   ],
   imports: [
     BrowserModule,
