@@ -14,6 +14,7 @@ import { ListComponent } from './equipes/list/list.component';
 import { WorkspaceComponent } from './equipes/workspace/wrokspace.component';
 import { BacklogComponent } from './equipes/workspace/backlog/backlog.component';
 import { ProjectComponent } from './project/project.component';
+import { SprintComponent } from './equipes/workspace/sprint/sprint.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ProjectComponent } from './project/project.component';
     ListComponent,
     WorkspaceComponent,
     BacklogComponent,
+    SprintComponent,
   ],
   imports: [
     BrowserModule,
