@@ -19,7 +19,7 @@ export const APP_ROUTES: Routes = [
       {
         path: 'workspace', component: WorkspaceComponent, children: [
           { path: 'backlog', canActivate: [WorkspaceGuard], component: BacklogComponent },
-            { path: 'sprint', canActivate: [WorkspaceGuard], component: SprintComponent },
+            { path: 'sprints', canActivate: [WorkspaceGuard], component: SprintComponent },
         ]
       }
     ]

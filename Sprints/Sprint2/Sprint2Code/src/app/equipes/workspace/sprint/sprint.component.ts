@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class SprintComponent implements OnInit {
 
-  public sprint;
+  public proporties;
   constructor(private http: Http, private router: Router) { }
 
   ngOnInit() {
-    this.http.post('http://localhost:3000/sprints', {idProjet: JSON.parse(localStorage.getItem('currentequipe'))['0'].id}).subscribe(response => {
-      this.sprint = response['_body'].result;
+    this.http.post('http://localhost:3000/sprints', {idprojet: JSON.parse(localStorage.getItem('currentequipe'))['0'].id}).subscribe(response => {
+      this.proporties = JSON.parse(response['_body']).result;
 
     },
       error => {

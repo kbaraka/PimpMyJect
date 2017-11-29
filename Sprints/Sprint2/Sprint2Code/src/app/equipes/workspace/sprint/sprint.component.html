@@ -1,37 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Sprint/title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
-
-<div class="container">
-  <h2>Sprint</h2>
   <table class="table">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>IdProjet</th>
         <th>Numero</th>
+        <th>IdProjet</th>
         <th>DateDebut</th>
         <th>DateFin</th>
       </tr>
     </thead>
     <tbody>
-       <tr *ngFor="list Sprint">
-        <td>{{sprints.id}}</td>
-        <td>{{sprints.idprojet</td>
-        <td>{{sprints.numero}}</td>
-        <td>{{sprints.datedebut}}</td>
-        <td>{{sprints.datefin}}</td>
-        <td a (Click)="Onclick(sprints.id)"></a>{{sprints.idprojet}}</td>
+       <tr *ngFor="let sprints of proporties">
+        <td><a (Click)="Onclick(sprints.numero)" style="cursor:pointer;">{{sprints.numero}}</a></td>
+        <td>{{sprints.idprojet}}</td>
+        <td>{{sprints.datedebut.slice(0,sprints.datedebut.indexOf('T'))}}</td>
+        <td>{{sprints.datefin.slice(0,sprints.datefin.indexOf('T'))}}</td>
+    
       </tr>
     </tbody>
   </table>
-</div>
 
-</body>
-</html>
+

@@ -22,7 +22,7 @@ app.use(
         host: 'localhost',
         user: 'root',
         password: 'root',
-        database: 'cdp',
+        database: 'CDP',
     }, 'request')
 
 );
