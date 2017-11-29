@@ -8,6 +8,7 @@ import { ListComponent } from './../equipes/list/list.component';
 import { WorkspaceComponent } from './../equipes/workspace/workspace.component';
 import { BacklogComponent } from './../equipes/workspace/backlog/backlog.component';
 import { ProjectComponent } from '../project/project.component';
+import {SprintComponent} from './../equipes/workspace/sprint/sprint.component';
 import { CreateUserStoryComponent } from '../equipes/workspace/backlog/create-user-story/create-user-story.component';
 import { ListUserStoryComponent } from './../equipes/workspace/backlog/list-user-story/list-user-story.component';
 import { CreateSprintComponent } from './../equipes/workspace/create-sprint/create-sprint.component';
@@ -31,6 +32,7 @@ export const APP_ROUTES: Routes = [
             ]
 
           },
+          { path: 'sprints', canActivate: [WorkspaceGuard], component: SprintComponent },
           { path: 'createsprint', canActivate: [WorkspaceGuard], component: CreateSprintComponent },
 
         ]

@@ -40,3 +40,4 @@
 | 38  | Implémenter la partie serveur de la page d'ajout d'un sprint: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 9 | Rihab |
 | 39  | Exécuter les tests E2E | - | Taha |
 | 40  | Génerer le build du deuxieme sprint | - | Taha |
+

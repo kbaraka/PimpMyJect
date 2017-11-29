@@ -29,8 +29,7 @@ export class ListComponent implements OnInit {
         console.log(error);
       });
   }
-
-
+  
   Onclick(id) {
     const results = [];
     for (let i = 0; i < this.equipes.length; i++) {

@@ -1,0 +1,21 @@
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>IdProjet</th>
+        <th>DateDebut</th>
+        <th>DateFin</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let sprints of proporties">
+        <td><a (Click)="Onclick(sprints.numero)" style="cursor:pointer;">{{sprints.numero}}</a></td>
+        <td>{{sprints.idprojet}}</td>
+        <td>{{sprints.datedebut.slice(0,sprints.datedebut.indexOf('T'))}}</td>
+        <td>{{sprints.datefin.slice(0,sprints.datefin.indexOf('T'))}}</td>
+    
+      </tr>
+    </tbody>
+  </table>
+
+
