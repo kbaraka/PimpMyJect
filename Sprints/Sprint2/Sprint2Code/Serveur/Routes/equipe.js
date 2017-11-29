@@ -1,16 +1,14 @@
 module.exports = function(app) {
 
-app.get('/equipes',function(request,response,next){
+app.post('/equipes',function(request,response,next){
   // resultat des requêtes
-
   var res = [];
-
 
     request.getConnection(function(error,connection){
         if (error) return next("Impossible de se connecter");
 
         // Récupération des équipes avec l'id utilisateur
-      connection.query('SELECT * FROM equipes where idutilisateur="' + request.query.id+'"', function(error, data) {
+      connection.query('SELECT * FROM equipes where idutilisateur="' + request.body.id+'"', function(error, data) {
           if(error){
             console.log(error);
             return next("Impossible d'obtenir la liste des champs de la table equipes");

@@ -49,7 +49,7 @@ export class CreateSprintComponent implements OnInit {
 
       if (JSON.parse(response['_body']).result) {
 
-        alert('Création du Sprint avec succes');
+        console.log('Création du Sprint avec succes');
       }
       else {
         alert('!!!! Impossible de créer le Sprint!!!!');

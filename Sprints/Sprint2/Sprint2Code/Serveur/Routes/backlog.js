@@ -39,7 +39,7 @@ module.exports = function(app) {
       }
     });
 
-  app.get('/listUserStory',function(request,response,next) {
+  app.post('/listUserStory',function(request,response,next) {
 
 
 
@@ -50,7 +50,7 @@ module.exports = function(app) {
       //verif co a la bd
       if (error) return next("Impossible de se connecter");
 
-      connection.query('SELECT * FROM userstorys where idprojet = "' + request.query.idBacklog + '" ', function(error, data) {
+      connection.query('SELECT * FROM userstorys where idprojet = "' + request.body.idBacklog + '" ', function(error, data) {
 
         if (error) {
           console.log(error);

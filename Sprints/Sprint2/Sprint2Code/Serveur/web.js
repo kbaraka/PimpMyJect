@@ -16,27 +16,12 @@ app.use(cors({
     credentials: true
 }));
 
-app.use(
 
-    connection(mysql, {
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'cdp',
-    }, 'request')
-
-);
-/* app.use(express.static(path.join(__dirname, './Public')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './Public/index.html'));
-});
- */
 
 var router = express.Router();
 
 app.use('/', router);
-
+require('./DB')(app);
 require('./Routes')(app);
 
 

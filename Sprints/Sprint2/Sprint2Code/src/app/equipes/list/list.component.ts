@@ -14,22 +14,13 @@ export class ListComponent implements OnInit {
   constructor(private guard: AppGuard, private http: Http, private router: Router) { }
 
   ngOnInit() {
-    // URL params
-    let params = new URLSearchParams();
-    params.set('id', this.guard.GetUser().id);
-    let requestOptions = new RequestOptions();
-    requestOptions.params = params;
-    requestOptions.responseType = ResponseContentType.Json;
-
-    // Requête GET
-    this.http.get('http://localhost:3000/equipes', requestOptions).subscribe(response => {
-      this.equipes = response['_body'].result;
+    this.http.post('http://localhost:3000/equipes', { id: this.guard.GetUser().id}).subscribe(response => {
+      this.equipes = JSON.parse(response['_body']).result;
     },
       error => {
         console.log(error);
       });
   }
-  
   Onclick(id) {
     const results = [];
     for (let i = 0; i < this.equipes.length; i++) {
