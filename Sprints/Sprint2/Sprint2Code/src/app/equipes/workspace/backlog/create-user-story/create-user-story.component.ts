@@ -32,7 +32,7 @@ export class CreateUserStoryComponent implements OnInit {
         alert('Veuillez remplir le formulaire en entier.');
       }
       else if (JSON.parse(response['_body']).result === 1) {
-        alert('Insertion réalisée.');
+        console.log('Insertion réalisée.');
         this.inputDescription = '';
         this.inputNumber = '';
         this.inputPriority = '';
