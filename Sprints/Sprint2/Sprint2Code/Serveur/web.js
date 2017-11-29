@@ -21,8 +21,8 @@ app.use(
     connection(mysql, {
         host: 'localhost',
         user: 'root',
-        password: 'root',
-        database: 'CDP',
+        password: '',
+        database: 'cdp',
     }, 'request')
 
 );

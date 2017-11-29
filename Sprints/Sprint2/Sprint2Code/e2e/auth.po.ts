@@ -11,7 +11,7 @@ export class Authentification {
         email.sendKeys('test@gmail.com');
         password.sendKeys('0000');
         submit.click();
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/equipes');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:4300/equipes');
 
     }
 

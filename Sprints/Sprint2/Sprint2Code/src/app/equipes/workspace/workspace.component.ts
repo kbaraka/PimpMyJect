@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-workspace',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkspaceComponent implements OnInit {
  equipe;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.equipe = JSON.parse(localStorage.getItem('currentequipe'));
-    
+    this.router.navigate(['equipes/workspace/backlog/listUserStory']);
+
   }
 
 }
