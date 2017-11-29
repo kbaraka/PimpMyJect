@@ -9,25 +9,57 @@ module.exports = function(app) {
 
             if (error) return next("Impossible de ce connecter");
 
+
+
+            connection.query('SELECT COUNT(*) as counting from sprints where numero = "' + numberSprint + '"', function(error, data) {
+                
+                
+                                if (error) {
+                                    console.log(error);
+                                    return next("Erreur de requete");
+                                } else {
+                                   
+                                    if (data[0].counting > 0) {
+                                       
+                                        response.send(JSON.stringify({
+                                            result: 0,
+                                            
+                                        }));
+                                      
+                                    } else {
+                                        
+
             connection.query("insert into sprints (numero, idprojet,datedebut,datefin) values ('"+numberSprint+"','"+idprojet+"','"+startDate+"','"+endDate+"')", function(error, data) {
 
-
+             
                 if (error) {
                     console.log(error);
                     return next("Erreur de requete");
-                }  else
-                {
-                    response.send(JSON.stringify({ 
-                        result : data
+                } else {
+                    let valid = 0;
+                    if (data.affectedRows > 0) valid = 1;
+
+
+                    response.send(JSON.stringify({
+                        result: valid,
+
                     }));
+
                 }
-                
-                
-    
-             });
-    
-        });
-    
-    });
+
+            });
+
+        }
+
+    }
+});
+
+
+
+
+});
+
+
+
+});
 }
-    
