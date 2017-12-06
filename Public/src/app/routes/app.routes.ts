@@ -12,6 +12,10 @@ import {SprintComponent} from './../equipes/workspace/sprint/sprint.component';
 import { CreateUserStoryComponent } from '../equipes/workspace/backlog/create-user-story/create-user-story.component';
 import { ListUserStoryComponent } from './../equipes/workspace/backlog/list-user-story/list-user-story.component';
 import { CreateSprintComponent } from './../equipes/workspace/create-sprint/create-sprint.component';
+import { SprintWorkspaceGuard } from '../guard/sprintworkspace.guard';
+import { SprintworkspaceComponent } from '../equipes/workspace/sprint/sprintworkspace/sprintworkspace.component';
+import { ListertacheComponent } from '../equipes/workspace/sprint/sprintworkspace/listertache/listertache.component';
+import { ListersprintComponent } from '../equipes/workspace/sprint/listersprint/listersprint.component';
 
 export const APP_ROUTES: Routes = [
   { path: 'invitation', canActivate: [AppGuard], component: InvitationComponent },
@@ -32,7 +36,17 @@ export const APP_ROUTES: Routes = [
             ]
 
           },
-          { path: 'sprints', canActivate: [WorkspaceGuard], component: SprintComponent },
+          {
+            path: 'sprints', canActivate: [WorkspaceGuard], component: SprintComponent, children: [
+              { path: '', canActivate: [WorkspaceGuard], component: ListersprintComponent },
+              {
+                path: 'sprintworkspace', component: SprintworkspaceComponent, children: [
+                  { path: '', canActivate: [SprintWorkspaceGuard], component: ListertacheComponent}
+                  /* ici */
+              ]
+            }
+             ]
+            },
           { path: 'createsprint', canActivate: [WorkspaceGuard], component: CreateSprintComponent },
 
         ]

@@ -9,21 +9,9 @@ import { Router } from '@angular/router';
 })
 export class SprintComponent implements OnInit {
 
-  public proporties;
-  constructor(private http: Http, private router: Router) { }
+
+  constructor() { }
 
   ngOnInit() {
-    this.http.post('http://localhost:3000/sprints', {idprojet: JSON.parse(localStorage.getItem('currentequipe'))['0'].id}).subscribe(response => {
-      this.proporties = JSON.parse(response['_body']).result;
-
-    },
-      error => {
-        console.log(error);
-      });
   }
-
-  Onclick(id){
-    
-  }
-
 }

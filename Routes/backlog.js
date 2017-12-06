@@ -102,5 +102,56 @@ module.exports = function(app) {
 
     });
   });
+  app.post('/changetest', function (request, response, next) {
+    var id = request.body.id;
+    var description = request.body.description;
+    var test = request.body.test;
 
+    request.getConnection(function (error, connection) {
+
+      if (error) return next("Impossible de ce connecter");
+
+      var requete = connection.query('UPDATE userstorys set Test ="' + test + '" where id = ' + id + ' and  description = "' + description + '" ', function (error, data) {
+
+        if (error) {
+          console.log(error);
+          return next("Erreur de requete");
+        } else {
+          response.send(JSON.stringify({
+            result: data.affectedRows
+          }));
+        }
+
+
+
+      });
+
+    });
+  });
+  app.post('/changedoc', function (request, response, next) {
+    var id = request.body.id;
+    var description = request.body.description;
+    var doc = request.body.doc;
+
+    request.getConnection(function (error, connection) {
+
+      if (error) return next("Impossible de ce connecter");
+
+      var requete = connection.query('UPDATE userstorys set Doc ="' + doc + '" where id = ' + id + ' and  description = "' + description + '" ', function (error, data) {
+
+        if (error) {
+          console.log(error);
+          return next("Erreur de requete");
+        } else {
+          response.send(JSON.stringify({
+            result: data.affectedRows
+          }));
+        }
+
+
+
+      });
+
+    });
+  });
 }

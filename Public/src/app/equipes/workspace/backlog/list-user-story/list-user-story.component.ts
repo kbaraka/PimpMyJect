@@ -11,6 +11,10 @@ export class ListUserStoryComponent implements OnInit {
   public backlog;
   public prio;
   public element;
+  public testlink;
+  public elementTest;
+  public doclink;
+  public elementDoc;
 
   constructor(private http: Http) { }
 
@@ -20,7 +24,7 @@ export class ListUserStoryComponent implements OnInit {
     this.http.post('http://localhost:3000/listUserStory', { idBacklog: this.idBacklog[0].id }).subscribe(response => {
 
       this.backlog = JSON.parse(response['_body']).result;
-      },
+    },
       error => {
         console.log(error);
       });
@@ -51,5 +55,51 @@ export class ListUserStoryComponent implements OnInit {
       });
     }
   }
+
+
+  changedTest(event) {
+    this.testlink = event.target.innerText;
+  }
+  lostfocusTest(event) {
+    this.elementTest = event.target;
+
+
+      // tslint:disable-next-line:max-line-length
+      this.http.post('http://localhost:3000/changetest', { id: this.elementTest.parentElement.children[0].innerText, description: this.elementTest.parentElement.children[2].innerText, test: this.testlink }).subscribe(response => {
+        if (JSON.parse(response['_body']).result) {
+          console.log('Test changé');
+        }
+        // tslint:disable-next-line:one-line
+        else {
+
+          alert('Ooups Impossible de changer :(');
+        }
+
+      });
+  }
+
+
+  changedDoc(event) {
+    this.doclink = event.target.innerText;
+  }
+  lostfocusDoc(event) {
+    this.elementDoc = event.target;
+
+
+      // tslint:disable-next-line:max-line-length
+      this.http.post('http://localhost:3000/changedoc', { id: this.elementDoc.parentElement.children[0].innerText, description: this.elementDoc.parentElement.children[2].innerText, doc: this.doclink }).subscribe(response => {
+        if (JSON.parse(response['_body']).result) {
+          console.log('Documentation changé');
+        }
+        // tslint:disable-next-line:one-line
+        else {
+
+          alert('Ooups Impossible de changer :(');
+        }
+
+      });
+  }
+
+
 
 }

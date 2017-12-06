@@ -17,7 +17,7 @@ export class InvitationComponent implements OnInit {
   InvitUser() {
     this.http.post('http://localhost:3000/invite', { invitEmail: this.invitEmail, projectName: this.projectName }).subscribe(response => {
       if (JSON.parse(response['_body']).result) {
-
+      console.log('OK');
         alert('Insertion avec succes');
 
       }

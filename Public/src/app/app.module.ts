@@ -19,6 +19,10 @@ import { CreateUserStoryComponent } from './equipes/workspace/backlog/create-use
 import { ListUserStoryComponent } from './equipes/workspace/backlog/list-user-story/list-user-story.component';
 import { CreateSprintComponent } from './equipes/workspace/create-sprint/create-sprint.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SprintworkspaceComponent } from './equipes/workspace/sprint/sprintworkspace/sprintworkspace.component';
+import { SprintWorkspaceGuard } from './guard/sprintworkspace.guard';
+import { ListertacheComponent } from './equipes/workspace/sprint/sprintworkspace/listertache/listertache.component';
+import { ListersprintComponent } from './equipes/workspace/sprint/listersprint/listersprint.component';
 
 
 @NgModule({
@@ -35,6 +39,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CreateUserStoryComponent,
     ListUserStoryComponent,
     CreateSprintComponent,
+    SprintworkspaceComponent,
+    ListertacheComponent,
+    ListersprintComponent,
 
   ],
   imports: [
@@ -47,7 +54,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       { enableTracing: true }
     )
   ],
-  providers: [AppGuard, WorkspaceGuard],
+  providers: [AppGuard, WorkspaceGuard, SprintWorkspaceGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
