@@ -16,6 +16,7 @@ import { SprintWorkspaceGuard } from '../guard/sprintworkspace.guard';
 import { SprintworkspaceComponent } from '../equipes/workspace/sprint/sprintworkspace/sprintworkspace.component';
 import { ListertacheComponent } from '../equipes/workspace/sprint/sprintworkspace/listertache/listertache.component';
 import { ListersprintComponent } from '../equipes/workspace/sprint/listersprint/listersprint.component';
+import { ListeBuildComponent } from '../equipes/workspace/sprint/sprintworkspace/liste-build/liste-build.component';
 
 export const APP_ROUTES: Routes = [
   { path: 'invitation', canActivate: [AppGuard], component: InvitationComponent },
@@ -41,7 +42,8 @@ export const APP_ROUTES: Routes = [
               { path: '', canActivate: [WorkspaceGuard], component: ListersprintComponent },
               {
                 path: 'sprintworkspace', component: SprintworkspaceComponent, children: [
-                  { path: '', canActivate: [SprintWorkspaceGuard], component: ListertacheComponent}
+                  { path: 'listetaches', canActivate: [SprintWorkspaceGuard], component: ListertacheComponent},
+                  { path: 'listebuild', canActivate: [SprintWorkspaceGuard], component: ListeBuildComponent}
                   /* ici */
               ]
             }
