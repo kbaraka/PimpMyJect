@@ -30,14 +30,15 @@ CREATE TABLE `sprints` (
   `idprojet` int(11) NOT NULL,
   `numero` int(11) NOT NULL,
   `datedebut` date NOT NULL,
-  `datefin` date NOT NULL
+  `datefin` date NOT NULL,
+  `build` varchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-INSERT INTO `sprints` (`id`, `idprojet`, `numero`, `datedebut`, `datefin`) VALUES
-(1, 1, 7, '2017-12-12', '2017-01-12'),
-(2, 1, 2, '2018-01-20', '2018-03-02'),
-(3, 1, 3, '2019-02-02', '2020-04-02');
+INSERT INTO `sprints` (`id`, `idprojet`, `numero`, `datedebut`, `datefin`, `build`) VALUES
+(1, 1, 7, '2017-12-12', '2017-01-12', ''),
+(2, 1, 2, '2018-01-20', '2018-03-02', ''),
+(3, 1, 3, '2019-02-02', '2020-04-02', '');
 
 
 

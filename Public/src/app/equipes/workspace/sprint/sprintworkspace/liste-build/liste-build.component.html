@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Build</th>
+    <th></th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let sprint of affichageBuild">
+
+    <td contenteditable="true" (blur)="lostfocusBuild($event)" (keyup)="changedBuild($event)" style="color:#FF5722;cursor:pointer;">{{sprint.build}}</td>
+    <td hidden="true">{{sprint.build}}</td>
+  </tr>
+  </tbody>
+</table>
