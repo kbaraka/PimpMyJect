@@ -1,0 +1,28 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Num US</th>
+        <th>Description</th>
+        <th>Priorite</th>
+        <th>Difficulte</th>
+        <th>Test</th>
+        <th>Doc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let back of backlog">
+        <td hidden="true">{{back.id}}</td>
+        <td>{{back.numero}}</td>
+        <td>{{back.description}}</td>
+        <td contenteditable="true" (blur)="lostfocus($event)" (keyup)="changed($event)" style="color:#007bff;cursor:pointer;">{{back.priorite}}</td>
+        <td hidden="true">{{back.priorite}}</td>
+        <td>{{back.difficulte}}</td>
+        <td contenteditable="true" (blur)="lostfocusTest($event)" (keyup)="changedTest($event)" style="color:#009688;cursor:pointer;">{{back.Test}}</td>
+        <td hidden="true">{{back.Test}}</td>
+        <td contenteditable="true" (blur)="lostfocusDoc($event)" (keyup)="changedDoc($event)" style="color:#FF5722;cursor:pointer;">{{back.Doc}}</td>
+        <td hidden="true">{{back.Doc}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

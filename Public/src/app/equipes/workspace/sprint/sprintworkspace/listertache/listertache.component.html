@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th hidden="true">Id tache</th>
+        <th>Numéro</th>
+        <th>Description</th>
+        <th>Personne en charge</th>
+        <th>Status</th>
+        <th>E2E</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td hidden="true">{{task.id}}</td>
+        <td>{{task.numero}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.encharge}}</td>
+        <td>{{task.status}}</td>
+        <td>{{task.isE2E}}</td>
+        <td>
+          <a (click)="deleteTask(task.numero)" style="cursor:pointer;">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

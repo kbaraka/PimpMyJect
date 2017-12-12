@@ -1,0 +1,19 @@
+<legend>
+  Liste de mes équipes
+</legend>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th># équipe</th>
+        <th>Nom du projet associé</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipe of equipes">
+        <td>{{equipe.id}}</td>
+        <td><a (click) ="Onclick(equipe.id)" id="{{equipe.nom}}" >{{equipe.nom}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

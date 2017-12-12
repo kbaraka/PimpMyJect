@@ -1,0 +1,29 @@
+<form>
+    <legend>
+        Ajouter une User Story
+      </legend>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+        <label for="inputNumber" class="col-form-label">Numéro</label>
+        <input [(ngModel)] = 'inputNumber' [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="inputNumber" placeholder="Numéro US" required>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputPriority" class="col-form-label">Priorité</label>
+        <input [(ngModel)] = 'inputPriority' [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="inputPriority" placeholder="Priorité" required>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputDifficulty" class="col-form-label">Difficulté</label>
+        <input [(ngModel)] = 'inputDifficulty' [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="inputDifficulty" placeholder="Difficulté" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputDescription">Description</label>
+      <textarea [(ngModel)] = 'inputDescription' [ngModelOptions]="{standalone: true}" type="text" class="form-control" rows="3" id="inputDescription" placeholder="Description US" required></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+      <button class="btn btn-primary" type="submit" (click) = 'insertUS()' id="insertus">Ajouter</button>
+      <button class="btn btn-default" type="reset">Annuler</button>
+  </div>
+</form>
