@@ -20,8 +20,8 @@
 | 19  | Implémenter la page de la création d'une tache (JS) : <ul><li>Récupérer les champs du formulaire et les envoyer au serveur</li></ul> | 10 | - |
 | 20  | Implémenter la partie serveur de la page de la création d'une tache: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 10 | - |
 | 21 | Création d'un composant angular pour la suppression d'une tache et l'associer a une route | 10 | - |
-| 22 | Implémenter la page de la suppression d'une tache(interface graphique)  : <ul><li>Création formulaire (numero de la taches)</li></ul> | 10 | - |
-| 23  | Implémenter la page de la suppression d'une tache (JS) : <ul><li>Récupérer les champs du formulaire et les envoyer au serveur</li></ul> | 10 | - |
+| 22 | Implémenter la page de la suppression d'une tache(interface graphique)  : <ul><li>Ajouter un button de suppression dans la liste des taches d'un sprint</li></ul> | 10 | - |
+| 23  | Implémenter la page de la suppression d'une tache (JS) : <ul><li>Récupérer les informations de la taches a supprimé lorsqu'on clique sur le button de suppression et les envoyer au serveur</li></ul> | 10 | - |
 | 24  | Implémenter la partie serveur de la page de la suppression d'une tache: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 10 | - |
 | 25 | Création d'un composant angular pour la création d'un build et l'associer a une route | 12 | - |
 | 26 | Implémenter la page de la création d'un build(interface graphique)  : <ul><li>Création formulaire (Lien de stockage)</li></ul> | 12 | - |
