@@ -19,17 +19,16 @@
 | 18 | Implémenter la page de la création d'une tache(interface graphique)  : <ul><li>Création formulaire d'ajout d'une tache (description,numero,encharge,status,isE2E)</li></ul> | 10 | - |
 | 19  | Implémenter la page de la création d'une tache (JS) : <ul><li>Récupérer les champs du formulaire et les envoyer au serveur</li></ul> | 10 | - |
 | 20  | Implémenter la partie serveur de la page de la création d'une tache: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 10 | - |
-| 21 | Création d'un composant angular pour la suppression d'une tache et l'associer a une route | 10 | - |
-| 22 | Implémenter la page de la suppression d'une tache(interface graphique)  : <ul><li>Ajouter un button de suppression dans la liste des taches d'un sprint</li></ul> | 10 | - |
-| 23  | Implémenter la page de la suppression d'une tache (JS) : <ul><li>Récupérer les informations de la taches a supprimé lorsqu'on clique sur le button de suppression et les envoyer au serveur</li></ul> | 10 | - |
-| 24  | Implémenter la partie serveur de la page de la suppression d'une tache: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 10 | - |
-| 25 | Création d'un composant angular pour la création d'un build et l'associer a une route | 12 | - |
-| 26 | Implémenter la page de la création d'un build(interface graphique)  : <ul><li>Création formulaire (Lien de stockage)</li></ul> | 12 | - |
-| 27  | Implémenter la page de la création d'un build (JS) : <ul><li>Récupérer les champs du formulaire et les envoyer au serveur</li></ul> | 12 | - |
-| 28  | Implémenter la partie serveur de la page de la création d'un build: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 12 | - |
-| 29  | Implémenter la page des US du backlog (JS) 3 : <ul><li>Rendre le champ "test" modifiable pour pouvoir le changer</li><li>Récupérer la nouvelle valeur saisie et l'envoyer au serveur</li></ul> | 13 | - |
-| 30  | Implémenter la partie serveur de la page des US du backlog 3: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 13 | - |
-| 31  | Implémenter la page des US du backlog (JS) 4 : <ul><li>Rendre le champ "doc" modifiable pour pouvoir le changer</li><li>Récupérer la nouvelle valeur saisie et l'envoyer au serveur</li></ul> | 14 | - |
-| 32  | Implémenter la partie serveur de la page des US du backlog 4: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 14 | - |
-| 33  | Exécuter les tests E2E | - | - |
-| 34  | Génerer le build du troisieme sprint | - | - |
+| 21 | Implémenter la page de la suppression d'une tache(interface graphique)  : <ul><li>Ajouter un button de suppression dans la liste des taches d'un sprint</li></ul> | 10 | - |
+| 22  | Implémenter la page de la suppression d'une tache (JS) : <ul><li>Récupérer les informations de la taches a supprimé lorsqu'on clique sur le button de suppression et les envoyer au serveur</li></ul> | 10 | - |
+| 23  | Implémenter la partie serveur de la page de la suppression d'une tache: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 10 | - |
+| 24 | Création d'un composant angular pour la création d'un build et l'associer a une route | 12 | - |
+| 25 | Implémenter la page de la création d'un build(interface graphique)  : <ul><li>Création formulaire (Lien de stockage)</li></ul> | 12 | - |
+| 26  | Implémenter la page de la création d'un build (JS) : <ul><li>Récupérer les champs du formulaire et les envoyer au serveur</li></ul> | 12 | - |
+| 27  | Implémenter la partie serveur de la page de la création d'un build: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 12 | - |
+| 28  | Implémenter la page des US du backlog (JS) 3 : <ul><li>Rendre le champ "test" modifiable pour pouvoir le changer</li><li>Récupérer la nouvelle valeur saisie et l'envoyer au serveur</li></ul> | 13 | - |
+| 29  | Implémenter la partie serveur de la page des US du backlog 3: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 13 | - |
+| 30  | Implémenter la page des US du backlog (JS) 4 : <ul><li>Rendre le champ "doc" modifiable pour pouvoir le changer</li><li>Récupérer la nouvelle valeur saisie et l'envoyer au serveur</li></ul> | 14 | - |
+| 31  | Implémenter la partie serveur de la page des US du backlog 4: <ul><li>Récupérer les champs envoyés</li><li>exécuter une requête qui prend les champs en paramètre</li><li>Retourner le résultat de la requête </li></ul> | 14 | - |
+| 32  | Exécuter les tests E2E | - | - |
+| 33  | Génerer le build du troisieme sprint | - | - |
