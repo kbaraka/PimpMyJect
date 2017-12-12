@@ -5,8 +5,8 @@ module.exports = function (app) {
     settings = {
         host: 'localhost',
         user: 'root',
-        password: '',
-        database: 'cdp',
+        password: 'root',
+        database: 'db_schema',
     };
     app.use(connection(mysql, settings, 'request'));
 
