@@ -219,7 +219,8 @@ module.exports = function (app) {
 
             if (error) return next("Impossible de ce connecter");
 
-            connection.query('INSERT INTO taches (numero, idprojet,datedebut,datefin)', function (error, data) {
+            connection.query('INSERT INTO taches (idsprint, idprojet, description, numero, encharge, status, isE2E) ' + 
+                            'VALUES ', function (error, data) {
 
                 if (error) {
                     console.log(error);
