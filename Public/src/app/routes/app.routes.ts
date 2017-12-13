@@ -1,3 +1,4 @@
+import { CreertacheComponent } from './../equipes/workspace/sprint/sprintworkspace/creertache/creertache.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppGuard } from '../guard/app.guard';
 import { WorkspaceGuard } from '../guard/workspace.guard';
@@ -43,8 +44,9 @@ export const APP_ROUTES: Routes = [
               {
                 path: 'sprintworkspace', component: SprintworkspaceComponent, children: [
                   { path: 'listetaches', canActivate: [SprintWorkspaceGuard], component: ListertacheComponent},
-                  { path: 'listebuild', canActivate: [SprintWorkspaceGuard], component: ListeBuildComponent}
-                  /* ici */
+                  { path: 'listebuild', canActivate: [SprintWorkspaceGuard], component: ListeBuildComponent},
+                  { path: 'creertache', canActivate: [SprintWorkspaceGuard], component: CreertacheComponent}
+
               ]
             }
              ]

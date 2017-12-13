@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-creertache',
@@ -8,26 +9,26 @@ import { Http } from '@angular/http';
 })
 export class CreertacheComponent implements OnInit {
 
+  public tasknumber;
   public usnumber;
   public description;
   public person;
   public status;
-  public teste2e;
 
   constructor(private http: Http) { }
 
   ngOnInit() {
   }
 
-  public createTask(): void {
+  public createTask(selectedValue): void {
     const idSprint = JSON.parse(localStorage.getItem('currentsprint'));
     const idProjet = JSON.parse(localStorage.getItem('currentequipe'));
 
-    if (this.usnumber && this.description && this.person && this.status && this.teste2e) {}
+    if (this.usnumber && this.description && this.person && this.status) {
         this.http.post('http://localhost:3000/addTask', {
-              idsprint: idSprint, idprojet: idProjet,
+              idsprint: idSprint, idprojet: idProjet, tasknumber: this.tasknumber,
               usnumber: this.usnumber, description: this.description,
-              person: this.person, status: this.status, test: this.teste2e
+              person: this.person, status: this.status, test: selectedValue
             }).subscribe(response => {
           if (JSON.parse(response['_body']).result) {
             console.log('tâche créée');
@@ -38,5 +39,4 @@ export class CreertacheComponent implements OnInit {
         });
     }
   }
-
 }

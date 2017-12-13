@@ -207,20 +207,24 @@ module.exports = function (app) {
     });
 
     app.post('/addTask', function (request, response, next) {
-        var idProjet = request.body.idprojet;
+        var idProjet = request.body.idprojet['0'].id;
         var idSprint = request.body.idsprint;
+        var tasknumber = request.body.tasknumber;
         var usnumber = request.body.usnumber;
         var description = request.body.description;
         var person = request.body.person;
         var status = request.body.status;
         var test = request.body.test;
 
+        console.log("addtask");
+
         request.getConnection(function (error, connection) {
 
             if (error) return next("Impossible de ce connecter");
 
-            connection.query('INSERT INTO taches (idsprint, idprojet, description, numero, encharge, status, isE2E) ' + 
-                            'VALUES ', function (error, data) {
+            connection.query('INSERT INTO taches (idsprint, idprojet, description, numero, encharge, status, isE2E, numus) ' + 
+                            "VALUES (" + idSprint + ", " + idProjet + ", '" + description + "', " + tasknumber + ", '" + person +
+                            "', '" + status + "', '" + test + "', " + usnumber + ")", function (error, data) {
 
                 if (error) {
                     console.log(error);
