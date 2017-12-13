@@ -19,8 +19,7 @@ export class ListertacheComponent implements OnInit {
   ngOnInit() {
     this.idSprint = JSON.parse(localStorage.getItem('currentsprint'));
     this.idProjet = JSON.parse(localStorage.getItem('currentequipe'));
-    
-    this.http.post('http://localhost:3000/listTasks', { idProjet : this.idProjet , idSprint: this.idSprint }).subscribe(response => {
+    this.http.post('http://localhost:3000/listTasks', { idProjet : this.idProjet[0].id , idSprint: this.idSprint }).subscribe(response => {
       this.tasks = JSON.parse(response['_body']).result;
     },
       error => {

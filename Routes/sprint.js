@@ -153,14 +153,14 @@ module.exports = function (app) {
     });
 
     app.post('/listTasks', function (request, response, next) {
-        //  var idProjet = request.body.idProjet;
+          var idProjet = request.body.idProjet;
         var idSprint = request.body.idSprint;
 
         request.getConnection(function (error, connection) {
 
             if (error) return next("Impossible de ce connecter");
 
-            connection.query('SELECT * FROM taches WHERE idsprint = ' + idSprint + '', function (error, data) {
+            connection.query('SELECT * FROM taches WHERE idsprint = ' + idSprint + ' and idprojet = '+ idProjet, function (error, data) {
 
                 if (error) {
                     console.log(error);
