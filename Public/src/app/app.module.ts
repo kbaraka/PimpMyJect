@@ -24,6 +24,7 @@ import { SprintWorkspaceGuard } from './guard/sprintworkspace.guard';
 import { ListertacheComponent } from './equipes/workspace/sprint/sprintworkspace/listertache/listertache.component';
 import { ListersprintComponent } from './equipes/workspace/sprint/listersprint/listersprint.component';
 import { ListeBuildComponent } from './equipes/workspace/sprint/sprintworkspace/liste-build/liste-build.component';
+import { CreertacheComponent } from './equipes/workspace/sprint/sprintworkspace/creertache/creertache.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ListeBuildComponent } from './equipes/workspace/sprint/sprintworkspace/
     ListertacheComponent,
     ListersprintComponent,
     ListeBuildComponent,
+    CreertacheComponent,
 
   ],
   imports: [

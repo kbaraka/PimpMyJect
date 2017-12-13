@@ -206,6 +206,37 @@ module.exports = function (app) {
 
     });
 
+    app.post('/addTask', function (request, response, next) {
+        var idProjet = request.body.idprojet;
+        var idSprint = request.body.idsprint;
+        var usnumber = request.body.usnumber;
+        var description = request.body.description;
+        var person = request.body.person;
+        var status = request.body.status;
+        var test = request.body.test;
+
+        request.getConnection(function (error, connection) {
+
+            if (error) return next("Impossible de ce connecter");
+
+            connection.query('INSERT INTO taches (numero, idprojet,datedebut,datefin)', function (error, data) {
+
+                if (error) {
+                    console.log(error);
+                    return next("Erreur de requete");
+                } else {
+
+                    response.send(JSON.stringify({
+                        result: data
+                    }));
+                }
+            });
+
+        });
+
+
+    });
+
 
   
 
