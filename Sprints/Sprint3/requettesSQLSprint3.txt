@@ -1,0 +1,36 @@
+Backlog :
+INSERT INTO userstorys(idprojet, numero, description, priorite, difficulte) VALUES ('1', '2', 'EN tant qu'utilisateur...', '4', '5')",
+SELECT * FROM userstorys where idprojet = '4' 
+UPDATE userstorys set priorite ='5' where id = '1' and  description = 'En tant que développeur je souhaite...' 
+UPDATE userstorys set Test ='http://localhost/testus10' where id = '1' and  description = 'En tant que développeur je souhaite...'
+UPDATE userstorys set Doc ='http://localhost/Doc' where id = '1' and  description = 'En tant que développeur je souhaite...'
+
+Equipe :
+SELECT * FROM equipes WHERE idutilisateur='4'
+SELECT * FROM projets
+
+Userstory :
+UPDATE userstorys SET priorite ='1' where id = '2' AND  description = 'EN tant qu'utilisateur...'
+
+login :
+SELECT  * FROM utilisateurs WHERE email = 'test@gmail.com' AND password = 'test'
+SELECT COUNT(*) AS counting FROM utilisateurs WHERE email = 'test@gmail.com'
+INSERT INTO `utilisateurs` (`email`, `password`) VALUES ('cdp@gmail.com', 'cdp')
+
+Projet :
+SELECT COUNT(*) AS counting FROM equipes where idutilisateur = (SELECT id from utilisateurs where email = 'test@gmail.com') AND idprojet = (select id from projets WHERE nom = 'cdp')'
+INSERT INTO equipes ( idutilisateur, idprojet ) SELECT A.id, B.id FROM utilisateurs A, projets B WHERE A.email='test@gmail.com' AND B.nom='cdp'
+SELECT COUNT(*) AS counting FROM projets WHERE nom = 'cdp'
+INSERT INTO projets (nom) VALUES('cdp-Projet')
+INSERT INTO equipes (idutilisateur,idprojet) VALUES('5','1')
+
+Sprint :
+SELECT COUNT(*) AS counting FROM sprints where numero = '3'
+INSERT INTO sprints (numero, idprojet,datedebut,datefin) VALUES ('1','1','10/11/2017','20/11/2017')"
+SELECT * FROM sprints WHERE idprojet = '2'
+SELECT build FROM sprints WHERE idprojet = '1' AND numero = '3'
+UPDATE sprints SET build ='http://localhost/buildsprint3' where idprojet = '1' and  numero = '3'
+
+Task : 
+SELECT * FROM taches WHERE idsprint = '4' AND idprojet = '1'
+DELETE FROM taches WHERE idsprint = '3' AND numero = '4'
