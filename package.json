@@ -15,6 +15,7 @@
     "express-myconnection": "*",
     "express-validator": "^2.6.0",
     "mysql": "*",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "webpack": "^3.10.0"
   }
 }
