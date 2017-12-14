@@ -14,12 +14,6 @@ module.exports = function (app) {
 
             connection.query('SELECT COUNT(*) as counting from sprints where numero = "' + numberSprint + '"', function (error, data) {
 
-
-                if (error) {
-                    console.log(error);
-                    return next("Erreur de requete");
-                } else {
-
                     if (data[0].counting > 0) {
 
                         response.send(JSON.stringify({
@@ -34,7 +28,6 @@ module.exports = function (app) {
 
 
                             if (error) {
-                                console.log(error);
                                 return next("Erreur de requete");
                             } else {
                                 let valid = 0;
@@ -52,7 +45,7 @@ module.exports = function (app) {
 
                     }
 
-                }
+                
             });
 
 
@@ -73,7 +66,6 @@ module.exports = function (app) {
             connection.query('SELECT * FROM sprints WHERE idprojet = ' + idprojet + '', function (error, data) {
 
                 if (error) {
-                    console.log(error);
                     return next("Erreur de requete");
                 } else {
 

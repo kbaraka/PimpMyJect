@@ -11,7 +11,6 @@ module.exports = function (app) {
             connection.query('SELECT * FROM taches WHERE idsprint = ' + idSprint + ' and idprojet = ' + idProjet, function (error, data) {
 
                 if (error) {
-                    console.log(error);
                     return next("Erreur de requete");
                 } else {
 
@@ -28,7 +27,6 @@ module.exports = function (app) {
     });
 
     app.post('/deleteTask', function (request, response, next) {
-        //  var idProjet = request.body.idProjet;
         var idSprint = request.body.idSprint;
         var numTask = request.body.numTask;
 
@@ -39,7 +37,6 @@ module.exports = function (app) {
             connection.query('DELETE FROM taches WHERE idsprint = ' + idSprint + ' AND numero = ' + numTask + '', function (error, data) {
 
                 if (error) {
-                    console.log(error);
                     return next("Erreur de requete");
                 } else {
 
@@ -64,7 +61,6 @@ module.exports = function (app) {
         var status = request.body.status;
         var test = request.body.test;
 
-        console.log("addtask");
 
         request.getConnection(function (error, connection) {
 
@@ -75,7 +71,6 @@ module.exports = function (app) {
                 "', '" + status + "', '" + test + "', " + usnumber + ")", function (error, data) {
 
                     if (error) {
-                        console.log(error);
                         return next("Erreur de requete");
                     } else {
 
