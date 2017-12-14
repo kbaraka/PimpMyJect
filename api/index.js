@@ -73,28 +73,28 @@ module.exports = require("util");
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.AuthSwitchRequestPacket = __webpack_require__(36);
-exports.AuthSwitchResponsePacket = __webpack_require__(37);
-exports.ClientAuthenticationPacket = __webpack_require__(38);
-exports.ComChangeUserPacket = __webpack_require__(39);
-exports.ComPingPacket = __webpack_require__(40);
-exports.ComQueryPacket = __webpack_require__(41);
-exports.ComQuitPacket = __webpack_require__(42);
-exports.ComStatisticsPacket = __webpack_require__(43);
-exports.EmptyPacket = __webpack_require__(44);
-exports.EofPacket = __webpack_require__(45);
-exports.ErrorPacket = __webpack_require__(46);
+exports.AuthSwitchRequestPacket = __webpack_require__(38);
+exports.AuthSwitchResponsePacket = __webpack_require__(39);
+exports.ClientAuthenticationPacket = __webpack_require__(40);
+exports.ComChangeUserPacket = __webpack_require__(41);
+exports.ComPingPacket = __webpack_require__(42);
+exports.ComQueryPacket = __webpack_require__(43);
+exports.ComQuitPacket = __webpack_require__(44);
+exports.ComStatisticsPacket = __webpack_require__(45);
+exports.EmptyPacket = __webpack_require__(46);
+exports.EofPacket = __webpack_require__(47);
+exports.ErrorPacket = __webpack_require__(48);
 exports.Field = __webpack_require__(12);
-exports.FieldPacket = __webpack_require__(47);
-exports.HandshakeInitializationPacket = __webpack_require__(48);
-exports.LocalDataFilePacket = __webpack_require__(49);
-exports.OkPacket = __webpack_require__(50);
-exports.OldPasswordPacket = __webpack_require__(51);
-exports.ResultSetHeaderPacket = __webpack_require__(52);
-exports.RowDataPacket = __webpack_require__(53);
-exports.SSLRequestPacket = __webpack_require__(54);
-exports.StatisticsPacket = __webpack_require__(55);
-exports.UseOldPasswordPacket = __webpack_require__(56);
+exports.FieldPacket = __webpack_require__(49);
+exports.HandshakeInitializationPacket = __webpack_require__(50);
+exports.LocalDataFilePacket = __webpack_require__(51);
+exports.OkPacket = __webpack_require__(52);
+exports.OldPasswordPacket = __webpack_require__(53);
+exports.ResultSetHeaderPacket = __webpack_require__(54);
+exports.RowDataPacket = __webpack_require__(55);
+exports.SSLRequestPacket = __webpack_require__(56);
+exports.StatisticsPacket = __webpack_require__(57);
+exports.UseOldPasswordPacket = __webpack_require__(58);
 
 
 /***/ }),
@@ -104,7 +104,7 @@ exports.UseOldPasswordPacket = __webpack_require__(56);
 var Util           = __webpack_require__(0);
 var EventEmitter   = __webpack_require__(3).EventEmitter;
 var Packets        = __webpack_require__(1);
-var ErrorConstants = __webpack_require__(57);
+var ErrorConstants = __webpack_require__(59);
 
 // istanbul ignore next: Node.js < 0.10 not covered
 var listenerCount = EventEmitter.listenerCount
@@ -251,10 +251,10 @@ module.exports = require("safe-buffer");
 
 var Crypto           = __webpack_require__(10);
 var Events           = __webpack_require__(3);
-var Net              = __webpack_require__(25);
-var tls              = __webpack_require__(26);
+var Net              = __webpack_require__(27);
+var tls              = __webpack_require__(28);
 var ConnectionConfig = __webpack_require__(7);
-var Protocol         = __webpack_require__(29);
+var Protocol         = __webpack_require__(31);
 var SqlString        = __webpack_require__(15);
 var Query            = __webpack_require__(14);
 var Util             = __webpack_require__(0);
@@ -750,7 +750,7 @@ exports.CLIENT_REMEMBER_OPTIONS       = 2147483648;
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var urlParse        = __webpack_require__(27).parse;
+var urlParse        = __webpack_require__(29).parse;
 var ClientConstants = __webpack_require__(6);
 var Charsets        = __webpack_require__(11);
 var SSLProfiles     = null;
@@ -761,7 +761,7 @@ function ConnectionConfig(options) {
     options = ConnectionConfig.parseUrl(options);
   }
 
-  this.host               = options.host || '192.168.99.100';
+  this.host               = options.host || 'localhost';
   this.port               = options.port || 3306;
   this.localAddress       = options.localAddress;
   this.socketPath         = options.socketPath;
@@ -876,7 +876,7 @@ ConnectionConfig.getDefaultFlags = function getDefaultFlags(options) {
 
 ConnectionConfig.getSSLProfile = function getSSLProfile(name) {
   if (!SSLProfiles) {
-    SSLProfiles = __webpack_require__(28);
+    SSLProfiles = __webpack_require__(30);
   }
 
   var ssl = SSLProfiles[name];
@@ -1137,7 +1137,7 @@ function loadClass(className) {
       Class = __webpack_require__(16);
       break;
     case 'PoolCluster':
-      Class = __webpack_require__(71);
+      Class = __webpack_require__(73);
       break;
     case 'PoolConfig':
       Class = __webpack_require__(17);
@@ -1638,10 +1638,10 @@ Auth.int32Read = function(buffer, offset){
 var Sequence     = __webpack_require__(2);
 var Util         = __webpack_require__(0);
 var Packets      = __webpack_require__(1);
-var ResultSet    = __webpack_require__(60);
-var ServerStatus = __webpack_require__(61);
-var fs           = __webpack_require__(62);
-var Readable     = __webpack_require__(63);
+var ResultSet    = __webpack_require__(62);
+var ServerStatus = __webpack_require__(63);
+var fs           = __webpack_require__(64);
+var Readable     = __webpack_require__(65);
 
 module.exports = Query;
 Util.inherits(Query, Sequence);
@@ -1859,7 +1859,7 @@ Query.prototype.stream = function(options) {
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(69);
+module.exports = __webpack_require__(71);
 
 
 /***/ }),
@@ -1870,7 +1870,7 @@ var mysql          = __webpack_require__(9);
 var Connection     = __webpack_require__(5);
 var EventEmitter   = __webpack_require__(3).EventEmitter;
 var Util           = __webpack_require__(0);
-var PoolConnection = __webpack_require__(70);
+var PoolConnection = __webpack_require__(72);
 
 module.exports = Pool;
 
@@ -2244,7 +2244,9 @@ PoolSelector.ORDER = function PoolSelectorOrder() {
 /* WEBPACK VAR INJECTION */(function(__dirname) {var express = __webpack_require__(20),
     path = __webpack_require__(21),
     bodyParser = __webpack_require__(22),
-    cors = __webpack_require__(23),
+    connection = __webpack_require__(23),
+    mysql = __webpack_require__(24),
+    cors = __webpack_require__(25),
     app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -2257,19 +2259,18 @@ app.use(cors({
     credentials: true
 }));
 
-
 app.use(express.static(path.resolve('./Public')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve('./Public/index.html'));
 });
 
+
 var router = express.Router();
 
 app.use('/', router);
-__webpack_require__(24)(app);
-__webpack_require__(75)(app);
-
+__webpack_require__(26)(app);
+__webpack_require__(77)(app);
 
 
 
@@ -2304,18 +2305,30 @@ module.exports = require("body-parser");
 /* 23 */
 /***/ (function(module, exports) {
 
-module.exports = require("cors");
+module.exports = require("express-myconnection");
 
 /***/ }),
 /* 24 */
+/***/ (function(module, exports) {
+
+module.exports = require("mysql");
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+module.exports = require("cors");
+
+/***/ }),
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const mysql = __webpack_require__(9),
-    connection = __webpack_require__(73);
+    connection = __webpack_require__(75);
 
 module.exports = function (app) {
     settings = {
-        host: '192.168.99.100',
+        host: process.env.HOST,
         user: 'root',
         password: 'root',
         database: 'cdp',
@@ -2325,26 +2338,27 @@ module.exports = function (app) {
 
 }
 
-/***/ }),
-/* 25 */
-/***/ (function(module, exports) {
-
-module.exports = require("net");
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports) {
-
-module.exports = require("tls");
 
 /***/ }),
 /* 27 */
 /***/ (function(module, exports) {
 
-module.exports = require("url");
+module.exports = require("net");
 
 /***/ }),
 /* 28 */
+/***/ (function(module, exports) {
+
+module.exports = require("tls");
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports) {
 
 // Certificates for Amazon RDS
@@ -2905,16 +2919,16 @@ exports['Amazon RDS'] = {
 
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Parser       = __webpack_require__(30);
-var Sequences    = __webpack_require__(34);
+var Parser       = __webpack_require__(32);
+var Sequences    = __webpack_require__(36);
 var Packets      = __webpack_require__(1);
-var Timers       = __webpack_require__(66);
-var Stream       = __webpack_require__(67).Stream;
+var Timers       = __webpack_require__(68);
+var Stream       = __webpack_require__(69).Stream;
 var Util         = __webpack_require__(0);
-var PacketWriter = __webpack_require__(68);
+var PacketWriter = __webpack_require__(70);
 
 module.exports = Protocol;
 Util.inherits(Protocol, Stream);
@@ -3365,15 +3379,15 @@ Protocol.prototype._debugPacket = function(incoming, packet) {
 
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MAX_PACKET_LENGTH = Math.pow(2, 24) - 1;
 var MUL_32BIT         = Math.pow(2, 32);
-var PacketHeader      = __webpack_require__(31);
-var BigNumber         = __webpack_require__(32);
+var PacketHeader      = __webpack_require__(33);
+var BigNumber         = __webpack_require__(34);
 var Buffer            = __webpack_require__(4).Buffer;
-var BufferList        = __webpack_require__(33);
+var BufferList        = __webpack_require__(35);
 
 module.exports = Parser;
 function Parser(options) {
@@ -3847,7 +3861,7 @@ Parser.prototype._advanceToNextPacket = function() {
 
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports) {
 
 module.exports = PacketHeader;
@@ -3858,13 +3872,13 @@ function PacketHeader(length, number) {
 
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = require("bignumber.js");
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports) {
 
 
@@ -3895,20 +3909,20 @@ BufferList.prototype.push = function push(buf) {
 
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.ChangeUser = __webpack_require__(35);
-exports.Handshake = __webpack_require__(58);
-exports.Ping = __webpack_require__(59);
+exports.ChangeUser = __webpack_require__(37);
+exports.Handshake = __webpack_require__(60);
+exports.Ping = __webpack_require__(61);
 exports.Query = __webpack_require__(14);
-exports.Quit = __webpack_require__(64);
+exports.Quit = __webpack_require__(66);
 exports.Sequence = __webpack_require__(2);
-exports.Statistics = __webpack_require__(65);
+exports.Statistics = __webpack_require__(67);
 
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Sequence = __webpack_require__(2);
@@ -3955,7 +3969,7 @@ ChangeUser.prototype['ErrorPacket'] = function(packet) {
 
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = AuthSwitchRequestPacket;
@@ -3981,7 +3995,7 @@ AuthSwitchRequestPacket.prototype.write = function write(writer) {
 
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = AuthSwitchResponsePacket;
@@ -4001,7 +4015,7 @@ AuthSwitchResponsePacket.prototype.write = function write(writer) {
 
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(4).Buffer;
@@ -4061,7 +4075,7 @@ ClientAuthenticationPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = ComChangeUserPacket;
@@ -4093,7 +4107,7 @@ ComChangeUserPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = ComPingPacket;
@@ -4111,7 +4125,7 @@ ComPingPacket.prototype.parse = function(parser) {
 
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = ComQueryPacket;
@@ -4132,7 +4146,7 @@ ComQueryPacket.prototype.parse = function(parser) {
 
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = ComQuitPacket;
@@ -4150,7 +4164,7 @@ ComQuitPacket.prototype.write = function write(writer) {
 
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = ComStatisticsPacket;
@@ -4168,7 +4182,7 @@ ComStatisticsPacket.prototype.parse = function(parser) {
 
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = EmptyPacket;
@@ -4180,7 +4194,7 @@ EmptyPacket.prototype.write = function write() {
 
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = EofPacket;
@@ -4211,7 +4225,7 @@ EofPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = ErrorPacket;
@@ -4252,7 +4266,7 @@ ErrorPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = FieldPacket;
@@ -4351,7 +4365,7 @@ FieldPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(4).Buffer;
@@ -4460,7 +4474,7 @@ HandshakeInitializationPacket.prototype.scrambleBuff = function() {
 
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = LocalDataFilePacket;
@@ -4481,7 +4495,7 @@ LocalDataFilePacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports) {
 
 
@@ -4531,7 +4545,7 @@ OkPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = OldPasswordPacket;
@@ -4552,7 +4566,7 @@ OldPasswordPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = ResultSetHeaderPacket;
@@ -4583,7 +4597,7 @@ ResultSetHeaderPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Types                        = __webpack_require__(8);
@@ -4722,7 +4736,7 @@ function typeMatch(type, list) {
 
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // http://dev.mysql.com/doc/internals/en/ssl.html
@@ -4755,7 +4769,7 @@ SSLRequestPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = StatisticsPacket;
@@ -4781,7 +4795,7 @@ StatisticsPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports) {
 
 module.exports = UseOldPasswordPacket;
@@ -4801,7 +4815,7 @@ UseOldPasswordPacket.prototype.write = function(writer) {
 
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports) {
 
 /**
@@ -7213,7 +7227,7 @@ exports[3198] = 'ER_KEYRING_AWS_UDF_AWS_KMS_ERROR';
 
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Sequence        = __webpack_require__(2);
@@ -7352,7 +7366,7 @@ Handshake.prototype['ErrorPacket'] = function(packet) {
 
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Sequence = __webpack_require__(2);
@@ -7377,7 +7391,7 @@ Ping.prototype.start = function() {
 
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports) {
 
 module.exports = ResultSet;
@@ -7390,7 +7404,7 @@ function ResultSet(resultSetHeaderPacket) {
 
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports) {
 
 // Manually extracted from mysql-5.5.23/include/mysql_com.h
@@ -7435,19 +7449,19 @@ exports.SERVER_PS_OUT_PARAMS = 4096;
 
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports) {
 
 module.exports = require("readable-stream");
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Sequence = __webpack_require__(2);
@@ -7493,7 +7507,7 @@ Quit.prototype.start = function() {
 
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Sequence = __webpack_require__(2);
@@ -7529,19 +7543,19 @@ Statistics.prototype.determinePacket = function determinePacket(firstByte) {
 
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = require("timers");
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = require("stream");
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var BIT_16            = Math.pow(2, 16);
@@ -7758,13 +7772,13 @@ PacketWriter.prototype._allocate = function _allocate(bytes) {
 
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = require("sqlstring");
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits   = __webpack_require__(0).inherits;
@@ -7835,12 +7849,12 @@ PoolConnection.prototype._removeFromPool = function _removeFromPool() {
 
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Pool          = __webpack_require__(16);
 var PoolConfig    = __webpack_require__(17);
-var PoolNamespace = __webpack_require__(72);
+var PoolNamespace = __webpack_require__(74);
 var PoolSelector  = __webpack_require__(18);
 var Util          = __webpack_require__(0);
 var EventEmitter  = __webpack_require__(3).EventEmitter;
@@ -8129,7 +8143,7 @@ function _noop() {}
 
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Connection   = __webpack_require__(5);
@@ -8271,13 +8285,13 @@ PoolNamespace.prototype._getClusterNode = function _getClusterNode() {
 
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(74);
+module.exports = __webpack_require__(76);
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports) {
 
 var _mysql,
@@ -8408,22 +8422,24 @@ module.exports = function (mysql, dbConfig, strategy) {
 
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function(app){
 
-    __webpack_require__(76)(app);
-    __webpack_require__(77)(app);
     __webpack_require__(78)(app);
     __webpack_require__(79)(app);
     __webpack_require__(80)(app);
+    __webpack_require__(81)(app);
+    __webpack_require__(82)(app);
+    __webpack_require__(83)(app);
+    __webpack_require__(84)(app);
 
     
 }
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = function(app) {
@@ -8511,7 +8527,7 @@ module.exports = function(app) {
 }
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = function(app) {
@@ -8633,16 +8649,14 @@ module.exports = function(app) {
 }
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = function(app) {
 
 app.post('/equipes',function(request,response,next){
   // resultat des requêtes
-
   var res = [];
-
 
     request.getConnection(function(error,connection){
         if (error) return next("Impossible de se connecter");
@@ -8687,7 +8701,7 @@ app.post('/equipes',function(request,response,next){
 
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = function(app) {
@@ -8794,95 +8808,146 @@ module.exports = function(app) {
 
     });
   });
+  app.post('/changetest', function (request, response, next) {
+    var id = request.body.id;
+    var description = request.body.description;
+    var test = request.body.test;
 
+    request.getConnection(function (error, connection) {
+
+      if (error) return next("Impossible de ce connecter");
+
+      var requete = connection.query('UPDATE userstorys set Test ="' + test + '" where id = ' + id + ' and  description = "' + description + '" ', function (error, data) {
+
+        if (error) {
+          console.log(error);
+          return next("Erreur de requete");
+        } else {
+          response.send(JSON.stringify({
+            result: data.affectedRows
+          }));
+        }
+
+
+
+      });
+
+    });
+  });
+  app.post('/changedoc', function (request, response, next) {
+    var id = request.body.id;
+    var description = request.body.description;
+    var doc = request.body.doc;
+
+    request.getConnection(function (error, connection) {
+
+      if (error) return next("Impossible de ce connecter");
+
+      var requete = connection.query('UPDATE userstorys set Doc ="' + doc + '" where id = ' + id + ' and  description = "' + description + '" ', function (error, data) {
+
+        if (error) {
+          console.log(error);
+          return next("Erreur de requete");
+        } else {
+          response.send(JSON.stringify({
+            result: data.affectedRows
+          }));
+        }
+
+
+
+      });
+
+    });
+  });
 }
 
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports) {
 
-module.exports = function(app) {
-    app.post('/createsprint', function(request, response, next) {
+module.exports = function (app) {
+    app.post('/createsprint', function (request, response, next) {
         var numberSprint = request.body.numberSprint;
         var startDate = request.body.startDate;
         var endDate = request.body.endDate;
-        var idprojet=request.body.idprojet;
-    
-        request.getConnection(function(error, connection) {
+        var idprojet = request.body.idprojet;
+
+        request.getConnection(function (error, connection) {
 
             if (error) return next("Impossible de ce connecter");
 
 
 
 
-            connection.query('SELECT COUNT(*) as counting from sprints where numero = "' + numberSprint + '"', function(error, data) {
-                
-                
-                                if (error) {
-                                    console.log(error);
-                                    return next("Erreur de requete");
-                                } else {
-                                   
-                                    if (data[0].counting > 0) {
-                                       
-                                        response.send(JSON.stringify({
-                                            result: 0,
-                                            
-                                        }));
-                                      
-                                    } else {
-                                        
+            connection.query('SELECT COUNT(*) as counting from sprints where numero = "' + numberSprint + '"', function (error, data) {
 
-            connection.query("insert into sprints (numero, idprojet,datedebut,datefin) values ('"+numberSprint+"','"+idprojet+"','"+startDate+"','"+endDate+"')", function(error, data) {
 
-             
                 if (error) {
                     console.log(error);
                     return next("Erreur de requete");
                 } else {
-                    let valid = 0;
-                    if (data.affectedRows > 0) valid = 1;
+
+                    if (data[0].counting > 0) {
+
+                        response.send(JSON.stringify({
+                            result: 0,
+
+                        }));
+
+                    } else {
 
 
-                    response.send(JSON.stringify({
-                        result: valid,
+                        connection.query("insert into sprints (numero, idprojet,datedebut,datefin) values ('" + numberSprint + "','" + idprojet + "','" + startDate + "','" + endDate + "')", function (error, data) {
 
-                    }));
+
+                            if (error) {
+                                console.log(error);
+                                return next("Erreur de requete");
+                            } else {
+                                let valid = 0;
+                                if (data.affectedRows > 0) valid = 1;
+
+
+                                response.send(JSON.stringify({
+                                    result: valid,
+
+                                }));
+
+                            }
+
+                        });
+
+                    }
 
                 }
-
             });
 
-        }
-
-    }
-});
 
 
 
-
-});
-
+        });
 
 
-});
-app.post('/sprints', function(request, response, next) {
+
+    });
+    app.post('/sprints', function (request, response, next) {
         var idprojet = request.body.idprojet;
-        
-        request.getConnection(function(error, connection) {
+
+        request.getConnection(function (error, connection) {
 
             if (error) return next("Impossible de ce connecter");
 
-            connection.query('SELECT * FROM sprints WHERE idprojet = '+ idprojet +'', function(error, data) {
-                
+            connection.query('SELECT * FROM sprints WHERE idprojet = ' + idprojet + '', function (error, data) {
+
                 if (error) {
                     console.log(error);
                     return next("Erreur de requete");
                 } else {
 
                     response.send(JSON.stringify({
-                        result : data
+                        result: data
                     }));
 
                 }
@@ -8895,7 +8960,181 @@ app.post('/sprints', function(request, response, next) {
 
 
 
-    });  
+    });
+
+
+
+
+}
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+module.exports = function (app) {
+    app.post('/listSprintBuild', function (request, response, next) {
+        var numProjet = request.body.numProjet;
+        var numSprint = request.body.numSprint;
+
+        request.getConnection(function (error, connection) {
+
+            if (error) return next("Impossible de ce connecter");
+
+            connection.query('SELECT build FROM sprints WHERE idprojet = ' + numProjet + ' AND numero = ' + numSprint + '', function (error, data) {
+
+                if (error) {
+                    console.log(error);
+                    return next("Erreur de requete");
+                } else {
+
+                    response.send(JSON.stringify({
+                        result: data
+                    }));
+
+                }
+            });
+
+
+
+
+        });
+
+
+    });
+
+    app.post('/listSprintBuildChange', function (request, response, next) {
+        var numProjet = request.body.numProjet;
+        var numSprint = request.body.numSprint;
+        var newBuild = request.body.newBuild;
+
+        request.getConnection(function (error, connection) {
+
+            if (error) return next("Impossible de ce connecter");
+
+            var requete = connection.query('UPDATE sprints SET build =" ' + newBuild + ' " where idprojet = ' + numProjet + ' and  numero = ' + numSprint + '', function (error, data) {
+
+                if (error) {
+                    console.log(error);
+
+                    return next("Erreur de requete");
+                } else {
+                    response.send(JSON.stringify({
+                        result: data.affectedRows
+                    }));
+                }
+
+
+
+            });
+
+        });
+    });
+
+
+
+
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+module.exports = function (app) {
+
+    app.post('/listTasks', function (request, response, next) {
+        var idProjet = request.body.idProjet;
+        var idSprint = request.body.idSprint;
+
+        request.getConnection(function (error, connection) {
+
+            if (error) return next("Impossible de ce connecter");
+
+            connection.query('SELECT * FROM taches WHERE idsprint = ' + idSprint + ' and idprojet = ' + idProjet, function (error, data) {
+
+                if (error) {
+                    console.log(error);
+                    return next("Erreur de requete");
+                } else {
+
+                    response.send(JSON.stringify({
+                        result: data
+                    }));
+
+                }
+            });
+
+        });
+
+
+    });
+
+    app.post('/deleteTask', function (request, response, next) {
+        //  var idProjet = request.body.idProjet;
+        var idSprint = request.body.idSprint;
+        var numTask = request.body.numTask;
+
+        request.getConnection(function (error, connection) {
+
+            if (error) return next("Impossible de ce connecter");
+
+            connection.query('DELETE FROM taches WHERE idsprint = ' + idSprint + ' AND numero = ' + numTask + '', function (error, data) {
+
+                if (error) {
+                    console.log(error);
+                    return next("Erreur de requete");
+                } else {
+
+                    response.send(JSON.stringify({
+                        result: data
+                    }));
+                }
+            });
+
+        });
+
+
+    });
+
+    app.post('/addTask', function (request, response, next) {
+        var idProjet = request.body.idprojet['0'].id;
+        var idSprint = request.body.idsprint;
+        var tasknumber = request.body.tasknumber;
+        var usnumber = request.body.usnumber;
+        var description = request.body.description;
+        var person = request.body.person;
+        var status = request.body.status;
+        var test = request.body.test;
+
+        console.log("addtask");
+
+        request.getConnection(function (error, connection) {
+
+            if (error) return next("Impossible de ce connecter");
+
+            connection.query('INSERT INTO taches (idsprint, idprojet, description, numero, encharge, status, isE2E, numus) ' +
+                "VALUES (" + idSprint + ", " + idProjet + ", '" + description + "', " + tasknumber + ", '" + person +
+                "', '" + status + "', '" + test + "', " + usnumber + ")", function (error, data) {
+
+                    if (error) {
+                        console.log(error);
+                        return next("Erreur de requete");
+                    } else {
+
+                        response.send(JSON.stringify({
+                            result: data
+                        }));
+                    }
+                });
+
+        });
+
+
+    });
+
+
+
+
+
 }
 
 /***/ })
